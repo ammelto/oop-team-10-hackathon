@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">OOP</string>
+    <string name="hint_prompt">Ask Gemma something…</string>
+    <string name="action_capture_photo">Take photo</string>
+    <string name="action_clear_photo">Remove photo</string>
+    <string name="action_send">Send</string>
+    <string name="action_retry">Retry</string>
+    <string name="action_save_download">Save &amp; download</string>
+    <string name="action_cancel_download">Cancel download</string>
+    <string name="action_enter_token">Enter token</string>
+    <string name="action_reset">Reset conversation</string>
+    <string name="action_dismiss">Dismiss</string>
+    <string name="status_loading_model">Loading Gemma 4 E4B…</string>
+    <string name="status_model_missing">Model missing. Download it or add it manually to continue.</string>
+    <string name="status_needs_token">Hugging Face token required</string>
+    <string name="status_downloading">Downloading Gemma 4 E4B…</string>
+    <string name="status_downloading_progress">Downloading Gemma 4 E4B… %1$d%%</string>
+    <string name="status_download_failed">Download failed: %1$s</string>
+    <string name="status_ready_gpu">Ready on GPU</string>
+    <string name="status_ready_cpu">Ready on CPU</string>
+    <string name="status_generating">Generating…</string>
+    <string name="status_photo_attached">Photo attached</string>
+    <string name="status_error">Error: %1$s</string>
+    <string name="empty_state_hint">Your local Gemma chat will appear here.</string>
+    <string name="dialog_token_title">Download Gemma 4 E4B</string>
+    <string name="dialog_token_message">Paste a Hugging Face token with access to `litert-community/gemma-4-E4B-it-litert-lm`. Make sure you have accepted the Gemma license on Hugging Face first.</string>
+    <string name="dialog_token_hint">Hugging Face access token</string>
+</resources>
