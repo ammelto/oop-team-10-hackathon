@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <paths>
+    <cache-path
+        name="glasses_snapshots"
+        path="glasses_snapshots/" />
     <external-files-path
         name="photos"
         path="photos/" />

@@ -98,6 +98,15 @@ fun StatusBar(
                     }
                 }
 
+                is Status.OntologyFailed -> {
+                    IconButton(onClick = onRetry) {
+                        Icon(
+                            imageVector = Icons.Default.Refresh,
+                            contentDescription = stringResource(R.string.action_retry),
+                        )
+                    }
+                }
+
                 else -> Unit
             }
         },
@@ -109,7 +118,10 @@ private fun Status.toStatusText(): String {
     val context = LocalContext.current
     return when (this) {
         Status.Loading -> context.getString(R.string.status_loading_model)
+        is Status.OntologyInstalling -> context.getString(R.string.status_ontology_installing, file)
+        is Status.OntologyFailed -> context.getString(R.string.status_ontology_failed, message)
         Status.Generating -> context.getString(R.string.status_generating)
+        Status.Classifying -> context.getString(R.string.status_classifying)
         Status.ModelMissing -> context.getString(R.string.status_model_missing)
         Status.NeedsToken -> context.getString(R.string.status_needs_token)
         is Status.Downloading -> {

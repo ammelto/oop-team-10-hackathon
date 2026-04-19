@@ -1,0 +1,6 @@
+{
+  "version": 1,
+  "snomed": { "resource": "snomed", "rows": 429670 },
+  "icd10cm": { "resource": "icd10cm_codes_2026", "rows": 74715 },
+  "ais1985": { "resource": "ais_codes", "rows": 1507 }
+}

@@ -1,0 +1,1511 @@
+ABBREVIATED INJURY SCALE (AIS) - 1985 REVISION
+COMPLETE CODE LIST
+===================================================
+
+CODE FORMAT: XXXXX.Y
+  - First digit = body region (1=External, 2=Head, 3=Face, 4=Neck,
+    5=Thorax, 6=Abdomen & Pelvic Contents, 7=Spine,
+    8=Upper Extremity, 9=Lower Extremity)
+  - Next 4 digits = specific organ/area and injury type
+  - Digit after decimal = AIS severity code
+
+AIS SEVERITY CODE:
+  1 = Minor
+  2 = Moderate
+  3 = Serious
+  4 = Severe
+  5 = Critical
+  6 = Maximum (virtually unsurvivable)
+  9 = Unknown
+
+===================================================
+EXTERNAL - SKIN
+===================================================
+10101.1  Abrasion NFS
+10102.1  Abrasion superficial (minor)
+10103.2  Abrasion major
+10201.1  Contusion NFS
+10202.1  Contusion superficial (minor)
+10203.2  Contusion major
+10301.1  Laceration NFS
+10302.1  Laceration superficial (minor)
+10303.2  Laceration deep (>10cm body or >5cm face/hand)
+10401.2  Avulsion NFS
+10402.2  Avulsion superficial (minor)
+10403.3  Avulsion major
+10501.1  Penetrating injury NFS
+10502.1  Penetrating injury no tissue loss
+10503.2  Penetrating injury superficial tissue loss
+10601.1  Degloving injury NFS
+10602.1  Degloving injury <10%
+10603.2  Degloving injury 10-19%
+10604.3  Degloving injury 20-29%
+10605.4  Degloving injury 30-39%
+10606.5  Degloving injury 40-89%
+10608.7  Degloving injury >=90%
+
+===================================================
+EXTERNAL - BURNS
+===================================================
+10701.1  Burn unspecified degree NFS
+10702.1  Burn 1st degree up to 100%
+10703.1  Burn 2nd degree <10%
+10704.1  Burn 3rd degree <10%
+10705.2  Burn 2nd/3rd degree 10-19%
+10706.3  Burn 2nd/3rd degree 20-29%
+10707.4  Burn 2nd/3rd degree 30-39%
+10708.5  Burn 2nd/3rd degree 40-89%
+10709.6  Burn 2nd/3rd degree >=90%
+
+===================================================
+HEAD - CRANIUM AND BRAIN
+===================================================
+20101.5  Penetrating injury (skull with entrance/exit)
+20102.6  Massive crush (skull and brain deformation)
+20201.2  Cranial nerves contusion
+20202.2  Cranial nerves laceration
+
+--- Brain Stem ---
+20301.5  Brain stem NFS
+20302.5  Brain stem compression
+20303.5  Brain stem contusion
+20304.6  Brain stem crush
+20305.5  Brain stem hemorrhage
+20306.6  Brain stem laceration
+20307.6  Brain stem penetrating injury
+
+--- Cerebellum ---
+20401.3  Cerebellum NFS
+20402.3  Cerebellum contusion
+20403.3  Cerebellum injury (subarachnoid hemorrhage, edema, etc.)
+20404.4  Cerebellum laceration
+20405.4  Cerebellum epidural hematoma NFS
+20406.4  Cerebellum epidural hematoma <=100cc
+20407.5  Cerebellum epidural hematoma >100cc
+20408.4  Cerebellum subdural hematoma NFS
+20409.4  Cerebellum subdural hematoma <=100cc
+20410.5  Cerebellum subdural hematoma >100cc
+20411.4  Cerebellum intracerebellar hematoma
+20412.5  Cerebellum diffuse axonal injury
+20413.5  Cerebellum penetrating injury
+
+--- Cerebrum ---
+20501.3  Cerebrum NFS
+20502.3  Cerebrum contusion
+20503.3  Cerebrum injury (subarachnoid hemorrhage, edema, etc.)
+20504.4  Cerebrum laceration
+20505.4  Cerebrum epidural hematoma NFS
+20506.4  Cerebrum epidural hematoma <=100cc
+20507.5  Cerebrum epidural hematoma >100cc
+20508.4  Cerebrum subdural hematoma NFS
+20509.4  Cerebrum subdural hematoma <=100cc
+20510.5  Cerebrum subdural hematoma >100cc
+20511.4  Cerebrum intracerebral hematoma
+20512.5  Cerebrum diffuse axonal injury
+20513.5  Cerebrum penetrating injury
+
+--- Level of Consciousness (C-1) ---
+20601.1  Awake, no prior unconsciousness
+20602.2  Awake, prior unconsciousness, time unspecified
+20603.3  Awake, prior unconsciousness, with neurologic deficit
+20604.2  Amnesia
+20605.3  Amnesia with neurologic deficit
+20606.2  Awake, unconsciousness <1hr
+20607.3  Awake, unconsciousness <1hr with neurologic deficit
+20608.2  Lethargic, no prior unconscious
+20609.3  Lethargic, no prior unconscious with neurologic deficit
+20610.2  Lethargic, unconsciousness <1hr
+20611.3  Lethargic, unconsciousness <1hr with neurologic deficit
+20612.3  Lethargic, unconsciousness 1-6 hrs
+20613.4  Lethargic, unconsciousness 1-6 hrs with neurologic deficit
+20614.3  Lethargic, prior unconsciousness, time unspecified
+20615.4  Lethargic, prior unconsciousness with neurologic deficit
+20616.3  Lethargic, loss of consciousness unspecified
+20617.4  Lethargic, loss of consciousness with neurologic deficit
+20618.3  Unconscious, length unspecified
+20619.4  Unconscious, length unspecified with neurologic deficit
+20620.3  Unconscious <1hr
+20621.4  Unconscious <1hr with neurologic deficit
+20622.3  Unconscious 1-6 hrs
+20623.4  Unconscious 1-6 hrs with neurologic deficit
+20624.4  Unconscious 6-24 hrs
+20625.5  Unconscious 6-24 hrs with neurologic deficit
+20626.5  Unconscious >24 hrs
+20627.4  Appropriate movements on painful stimuli only
+20628.5  Appropriate movements on painful stimuli with neurologic deficit
+20629.5  Inappropriate movements (decerebrate, decorticate, flaccid)
+
+--- Length of Unconsciousness (C-2) ---
+20630.2  Unconsciousness <1hr
+20631.3  Unconsciousness <1hr with neurologic deficit
+20632.3  Unconsciousness 1-6 hrs
+20633.4  Unconsciousness 1-6 hrs with neurologic deficit
+20634.4  Unconsciousness 6-24 hrs
+20635.5  Unconsciousness 6-24 hrs with neurologic deficit
+20636.5  Unconsciousness >24 hrs
+20637.2  Cerebral concussion (diagnosed as such, no other info)
+
+--- Skull Fracture ---
+20701.3  Skull base fracture NFS
+20702.3  Skull base fracture with/without CSF leak
+20703.4  Skull base fracture complex (open, dura torn)
+20704.2  Skull vault fracture NFS
+20705.2  Skull vault fracture closed/undisplaced/linear/simple
+20706.3  Skull vault fracture comminuted/compound/depressed
+20727.4  Skull vault fracture complex (open, dura torn)
+20708.4  Skull vault fracture massively depressed (>2cm)
+
+===================================================
+HEAD - FACE (including ear and eye)
+===================================================
+30101.1  Face penetrating injury NFS
+30102.1  Face penetrating injury no tissue loss
+30103.2  Face penetrating injury superficial tissue loss
+30104.3  Face penetrating injury major tissue loss
+
+--- Ear ---
+30201.1  Ear injury NFS
+30301.1  Ear canal injury
+30401.1  Inner or middle ear injury
+30501.2  Ossicular chain dislocation
+30601.2  Tympanic membrane rupture
+
+--- Eye ---
+30701.1  Eye injury NFS
+30801.1  Canaliculus (tear duct) laceration
+30901.1  Choroid rupture
+31001.1  Conjunctiva injury
+31101.1  Cornea NFS
+31102.1  Cornea abrasion
+31103.1  Cornea contusion
+31104.2  Cornea laceration
+31201.3  Eye avulsion
+31301.1  Iris laceration
+31401.2  Optic nerve NFS
+31402.2  Optic nerve contusion
+31403.3  Optic nerve laceration (tear)
+31404.3  Optic nerve avulsion
+31501.1  Retina laceration
+31502.2  Retina laceration with detachment
+31601.2  Sclera laceration (rupture)
+31701.1  Uvea injury
+31801.1  Vitreous injury
+
+--- Mouth ---
+31901.1  Gingiva NFS
+31902.1  Gingiva contusion
+31903.1  Gingiva laceration
+31904.1  Gingiva avulsion
+32001.1  Tongue laceration NFS
+32002.1  Tongue laceration superficial
+32003.2  Tongue laceration deep/extensive
+
+--- Facial Skeletal ---
+32101.2  Alveolar ridge fracture w/ or w/o teeth injury
+32201.1  Mandible fracture NFS
+32202.1  Mandible fracture closed NFS
+32203.2  Mandible closed fracture body w/ or w/o ramus
+32204.1  Mandible closed fracture ramus
+32205.2  Mandible closed fracture subcondylar
+32206.2  Mandible fracture open/displaced/comminuted NFS
+32207.3  Mandible open fracture body w/ or w/o ramus
+32208.2  Mandible open fracture ramus
+32209.3  Mandible open fracture subcondylar
+32301.2  Maxilla fracture NFS
+32302.2  Maxilla fracture closed
+32303.2  Maxilla fracture LeFort I
+32304.3  Maxilla fracture LeFort II
+32305.4  Maxilla fracture LeFort III
+32401.1  Nasal contusion
+32402.1  Nasal fracture NFS
+32403.1  Nasal fracture closed
+32404.2  Nasal fracture open/displaced/comminuted
+32501.2  Orbit fracture NFS
+32502.2  Orbit fracture closed
+32503.3  Orbit fracture open/displaced/comminuted
+32601.1  Teeth NFS
+32602.1  Teeth dislocation or loosened
+32603.1  Teeth fracture
+32604.1  Teeth avulsion
+32701.1  Temporomandibular joint NFS
+32702.1  Temporomandibular joint sprain
+32703.2  Temporomandibular joint dislocation
+32801.2  Zygoma fracture (any type)
+
+===================================================
+NECK
+===================================================
+40101.6  Decapitation
+40102.2  Neck penetrating injury NFS
+40103.2  Neck penetrating injury no organ involvement
+40104.3  Neck penetrating injury complex with tissue loss
+40201.2  Vagus or phrenic nerve injury
+
+--- Carotid Artery ---
+40301.3  Carotid artery NFS
+40302.3  Carotid artery intimal tear
+40303.4  Carotid artery intimal tear with neurologic deficit
+40304.3  Carotid artery laceration NFS
+40305.3  Carotid artery laceration minor (superficial)
+40306.4  Carotid artery minor laceration with neurologic deficit
+40307.4  Carotid artery major laceration (transection, rupture)
+40308.5  Carotid artery major laceration with neurologic deficit
+40309.5  Carotid artery laceration with segmental loss
+40310.3  Carotid artery laceration with thrombosis
+40311.4  Carotid artery laceration with thrombosis & neurologic deficit
+40312.3  Carotid artery puncture NFS
+40313.3  Carotid artery puncture minor (superficial)
+40314.4  Carotid artery minor puncture with neurologic deficit
+40315.4  Carotid artery major puncture
+40316.5  Carotid artery major puncture with neurologic deficit
+40317.5  Carotid artery puncture with segmental loss
+40318.3  Carotid artery puncture with thrombosis
+40319.4  Carotid artery puncture with thrombosis & neurologic deficit
+40320.3  Carotid artery thrombosis secondary to trauma
+40321.4  Carotid artery thrombosis with neurologic deficit
+
+--- Jugular Vein External ---
+40401.1  External jugular vein NFS
+40402.1  External jugular vein laceration NFS
+40403.1  External jugular vein laceration minor
+40404.2  External jugular vein laceration major
+40405.2  External jugular vein laceration with segmental loss
+40406.1  External jugular vein puncture NFS
+40407.1  External jugular vein puncture minor
+40408.2  External jugular vein puncture major
+40409.2  External jugular vein puncture with segmental loss
+
+--- Jugular Vein Internal ---
+40501.1  Internal jugular vein NFS
+40502.3  Internal jugular vein laceration NFS
+40503.3  Internal jugular vein laceration minor
+40504.4  Internal jugular vein laceration major
+40505.4  Internal jugular vein laceration with segmental loss
+40506.3  Internal jugular vein puncture NFS
+40507.3  Internal jugular vein puncture minor
+40508.4  Internal jugular vein puncture major
+40509.4  Internal jugular vein puncture with segmental loss
+
+--- Vertebral Artery ---
+40601.3  Vertebral artery NFS
+40602.3  Vertebral artery intimal tear
+40603.4  Vertebral artery intimal tear with neurologic deficit
+40604.3  Vertebral artery laceration NFS
+40605.3  Vertebral artery laceration minor
+40606.4  Vertebral artery minor laceration with neurologic deficit
+40607.4  Vertebral artery laceration major
+40608.5  Vertebral artery major laceration with neurologic deficit
+40609.5  Vertebral artery laceration with segmental loss
+40610.4  Vertebral artery laceration with thrombosis
+40611.3  Vertebral artery puncture NFS
+40612.3  Vertebral artery puncture minor
+40613.4  Vertebral artery minor puncture with neurologic deficit
+40614.4  Vertebral artery puncture major
+40615.5  Vertebral artery major puncture with neurologic deficit
+40616.5  Vertebral artery puncture with segmental loss
+40617.4  Vertebral artery puncture with thrombosis
+40618.4  Vertebral artery thrombosis secondary to trauma
+40619.5  Vertebral artery thrombosis with neurologic deficit
+
+--- Larynx ---
+40701.3  Larynx NFS
+40702.3  Larynx contusion (hematoma)
+40703.3  Larynx laceration NFS
+40704.3  Larynx laceration no perforation
+40705.4  Larynx laceration perforation
+40706.5  Larynx laceration with tissue loss
+40707.3  Larynx puncture NFS
+40708.3  Larynx puncture no perforation
+40709.4  Larynx puncture perforation
+40710.5  Larynx puncture with tissue loss
+40711.4  Larynx crush
+
+--- Pharynx/Retropharyngeal ---
+40801.3  Pharynx/Retropharyngeal injury NFS
+40802.3  Pharynx contusion (hematoma)
+40803.3  Pharynx laceration NFS
+40804.3  Pharynx laceration no perforation
+40805.4  Pharynx laceration perforation
+40806.5  Pharynx laceration with tissue loss
+40807.3  Pharynx puncture NFS
+40808.3  Pharynx puncture no perforation
+40809.4  Pharynx puncture perforation
+40810.5  Pharynx puncture with tissue loss
+
+--- Thyroid ---
+40901.2  Thyroid gland NFS
+40902.2  Thyroid gland contusion (hematoma)
+40903.3  Thyroid gland laceration
+
+--- Vocal Cord / Hyoid ---
+41001.2  Vocal cord injury
+41002.5  Vocal cord injury with major respiratory difficulty
+41101.2  Hyoid fracture
+41102.5  Hyoid fracture with major respiratory difficulty
+
+===================================================
+THORAX
+===================================================
+50101.6  Massive crush (bilateral chest wall & internal organ deformation)
+50102.1  Thorax penetrating injury NFS
+50103.1  Penetrating injury simple, no pleural violation
+50104.3  Penetrating injury complex, no pleural violation
+50105.3  Inhalation injury minor (above glottis)
+50106.5  Inhalation injury severe
+
+--- Thoracic Aorta ---
+50201.4  Thoracic aorta NFS
+50202.4  Thoracic aorta intimal tear
+50203.4  Thoracic aorta laceration NFS
+50204.4  Thoracic aorta laceration minor
+50205.5  Thoracic aorta laceration major (incomplete transection)
+50206.6  Thoracic aorta laceration with segmental loss/total severance
+50207.5  Thoracic aorta laceration with thrombosis
+50208.4  Thoracic aorta puncture NFS
+50209.4  Thoracic aorta puncture minor
+50210.5  Thoracic aorta puncture major
+50211.6  Thoracic aorta puncture with segmental loss/total severance
+50212.5  Thoracic aorta puncture with thrombosis
+50213.3  Thoracic aorta thrombosis secondary to trauma
+
+--- Brachiocephalic Artery ---
+50301.3  Brachiocephalic artery NFS
+50302.3  Brachiocephalic artery intimal tear
+50303.3  Brachiocephalic artery laceration NFS
+50304.3  Brachiocephalic artery laceration minor
+50305.4  Brachiocephalic artery laceration major
+50306.6  Brachiocephalic artery laceration with segmental loss
+50307.4  Brachiocephalic artery laceration with thrombosis
+50308.3  Brachiocephalic artery puncture NFS
+50309.3  Brachiocephalic artery puncture minor
+50310.4  Brachiocephalic artery puncture major
+50311.6  Brachiocephalic artery puncture with segmental loss
+50312.4  Brachiocephalic artery puncture with thrombosis
+50313.3  Brachiocephalic artery thrombosis secondary to trauma
+
+--- Brachiocephalic Vein ---
+50401.3  Brachiocephalic vein NFS
+50402.3  Brachiocephalic vein laceration NFS
+50403.3  Brachiocephalic vein laceration minor
+50404.4  Brachiocephalic vein laceration major
+50405.5  Brachiocephalic vein laceration with segmental loss
+50406.3  Brachiocephalic vein puncture NFS
+50407.3  Brachiocephalic vein puncture minor
+50408.4  Brachiocephalic vein puncture major
+50409.5  Brachiocephalic vein puncture with segmental loss
+
+--- Pulmonary Artery ---
+50501.3  Pulmonary artery NFS
+50502.3  Pulmonary artery intimal tear
+50503.3  Pulmonary artery laceration NFS
+50504.3  Pulmonary artery laceration minor
+50505.4  Pulmonary artery laceration major
+50506.6  Pulmonary artery laceration with segmental loss
+50507.4  Pulmonary artery laceration with thrombosis
+50508.3  Pulmonary artery puncture NFS
+50509.3  Pulmonary artery puncture minor
+50510.4  Pulmonary artery puncture major
+50511.6  Pulmonary artery puncture with segmental loss
+50512.4  Pulmonary artery puncture with thrombosis
+50513.3  Pulmonary artery thrombosis secondary to trauma
+
+--- Pulmonary Vein ---
+50601.3  Pulmonary vein NFS
+50602.3  Pulmonary vein laceration NFS
+50603.3  Pulmonary vein laceration minor
+50604.4  Pulmonary vein laceration major
+50605.5  Pulmonary vein laceration with segmental loss
+50606.3  Pulmonary vein puncture NFS
+50607.3  Pulmonary vein puncture minor
+50608.4  Pulmonary vein puncture major
+50609.5  Pulmonary vein puncture with segmental loss or avulsion
+
+--- Subclavian Artery ---
+50701.3  Subclavian artery NFS
+50702.3  Subclavian artery intimal tear
+50703.3  Subclavian artery laceration NFS
+50704.3  Subclavian artery laceration minor
+50705.4  Subclavian artery laceration major
+50706.6  Subclavian artery laceration with segmental loss
+50707.4  Subclavian artery laceration with thrombosis
+50708.3  Subclavian artery puncture NFS
+50709.3  Subclavian artery puncture minor
+50710.4  Subclavian artery puncture major
+50711.6  Subclavian artery puncture with segmental loss
+50712.4  Subclavian artery puncture with thrombosis
+50713.3  Subclavian artery thrombosis secondary to trauma
+
+--- Subclavian Vein ---
+50801.3  Subclavian vein NFS
+50802.3  Subclavian vein laceration NFS
+50803.3  Subclavian vein laceration minor
+50804.4  Subclavian vein laceration major
+50805.4  Subclavian vein laceration with segmental loss
+50806.3  Subclavian vein puncture NFS
+50807.3  Subclavian vein puncture minor
+50808.4  Subclavian vein puncture major
+50809.5  Subclavian vein puncture with segmental loss
+
+--- Superior Vena Cava (thoracic portion) ---
+50901.3  SVC/thoracic NFS
+50902.3  SVC laceration NFS
+50903.3  SVC laceration minor
+50904.4  SVC laceration major
+50905.5  SVC laceration with segmental loss
+50906.3  SVC puncture NFS
+50907.3  SVC puncture minor
+50908.4  SVC puncture major
+50909.5  SVC puncture with segmental loss
+
+--- Other Named Thoracic Arteries ---
+51001.3  Other thoracic artery NFS
+51002.3  Other thoracic artery intimal tear
+51003.3  Other thoracic artery laceration NFS
+51004.3  Other thoracic artery laceration minor
+51005.4  Other thoracic artery laceration major
+51006.5  Other thoracic artery laceration with segmental loss
+51007.3  Other thoracic artery laceration with thrombosis
+51008.3  Other thoracic artery puncture NFS
+51009.3  Other thoracic artery puncture minor
+51010.4  Other thoracic artery puncture major
+51011.5  Other thoracic artery puncture with segmental loss
+51012.3  Other thoracic artery puncture with thrombosis
+51013.3  Other thoracic artery thrombosis
+
+--- Other Named Thoracic Veins ---
+51101.3  Other thoracic vein NFS
+51102.3  Other thoracic vein laceration NFS
+51103.3  Other thoracic vein laceration minor
+51104.4  Other thoracic vein laceration major
+51105.4  Other thoracic vein laceration with segmental loss
+51106.3  Other thoracic vein puncture NFS
+51107.3  Other thoracic vein puncture minor
+51108.4  Other thoracic vein puncture major
+51109.4  Other thoracic vein puncture with segmental loss
+
+--- Trachea ---
+51201.3  Trachea NFS
+51202.3  Trachea contusion (hematoma)
+51203.3  Trachea laceration NFS
+51204.3  Trachea laceration no perforation
+51205.4  Trachea laceration perforation
+51206.5  Trachea laceration with tissue loss
+51207.3  Trachea puncture NFS
+51208.3  Trachea puncture no perforation
+51209.4  Trachea puncture perforation
+51210.5  Trachea puncture with tissue loss
+51211.4  Trachea fracture NFS
+51212.4  Trachea fracture simple
+51213.5  Trachea fracture major (laryngeal-tracheal separation)
+51214.4  Trachea crush
+
+--- Bronchus ---
+51301.3  Major bronchus NFS
+51302.2  Major bronchus contusion (hematoma)
+51303.3  Major bronchus laceration NFS
+51304.3  Major bronchus laceration no perforation
+51305.4  Major bronchus laceration perforation
+51306.5  Major bronchus laceration with tissue loss
+51307.3  Major bronchus puncture NFS
+51308.3  Major bronchus puncture no perforation
+51309.4  Major bronchus puncture perforation
+51310.5  Major bronchus puncture with tissue loss
+51311.4  Major bronchus fracture NFS
+51312.4  Major bronchus fracture simple
+51313.5  Major bronchus fracture major (with separation)
+
+--- Lung ---
+51401.3  Lung contusion NFS
+51402.3  Lung contusion segmental (one lobe)
+51403.3  Lung contusion lobar (one lobe)
+51404.4  Lung contusion multiple lobes
+51405.3  Lung laceration NFS
+51406.4  Lung laceration with >1000cc hemothorax
+51407.4  Lung laceration with tension pneumothorax
+51408.4  Lung laceration with hemomediastinum
+51409.4  Lung laceration with pneumomediastinum
+51410.3  Lung laceration segmental (one lobe)
+51411.4  Lung segmental laceration with >1000cc hemothorax
+51412.4  Lung segmental laceration with tension pneumothorax
+51413.4  Lung segmental laceration with hemomediastinum
+51414.4  Lung segmental laceration with pneumomediastinum
+51415.3  Lung laceration lobar (one lobe)
+51416.4  Lung lobar laceration with >1000cc hemothorax
+51417.4  Lung lobar laceration with tension pneumothorax
+51418.4  Lung lobar laceration with hemomediastinum
+51419.4  Lung lobar laceration with pneumomediastinum
+51420.4  Lung laceration multiple lobes
+51421.5  Lung multiple lobe laceration with >1000cc hemothorax
+51422.5  Lung multiple lobe laceration with tension pneumothorax
+51423.5  Lung multiple lobe laceration with hemomediastinum
+51424.5  Lung multiple lobe laceration with pneumomediastinum
+
+--- Esophagus ---
+51501.3  Esophagus NFS
+51502.3  Esophagus contusion (hematoma)
+51503.3  Esophagus laceration NFS
+51504.3  Esophagus laceration no perforation
+51505.4  Esophagus laceration perforation
+51506.5  Esophagus laceration with tissue loss
+
+--- Diaphragm ---
+51601.2  Diaphragm contusion
+51602.3  Diaphragm laceration (rupture)
+
+--- Myocardium ---
+51701.4  Myocardium NFS
+51702.4  Myocardium contusion (hematoma)
+51703.5  Myocardium laceration NFS
+51704.5  Myocardium laceration simple (perforation, puncture)
+51705.6  Myocardium laceration complex (with/without tamponade)
+
+--- Pericardium ---
+51801.3  Pericardium NFS
+51802.3  Pericardium contusion NFS
+51803.3  Pericardium contusion with unilateral hemothorax
+51804.3  Pericardium contusion with unilateral pneumothorax
+51805.3  Pericardium contusion with unilateral hemopneumothorax
+51806.4  Pericardium contusion with bilateral hemothorax
+51807.4  Pericardium contusion with bilateral pneumothorax
+51808.4  Pericardium contusion with bilateral hemopneumothorax
+51809.4  Pericardium contusion with cardiac tamponade
+51810.4  Pericardium laceration (rupture) NFS
+51811.5  Pericardium laceration with hemothorax
+51812.5  Pericardium laceration with pneumothorax
+51813.5  Pericardium laceration with hemopneumothorax
+51814.5  Pericardium laceration with pneumomediastinum
+51815.4  Pericardium puncture NFS
+51816.5  Pericardium puncture with hemothorax
+51817.5  Pericardium puncture with pneumothorax
+51818.5  Pericardium puncture with hemopneumothorax
+51819.5  Pericardium puncture with pneumomediastinum
+
+--- Other Thoracic ---
+51901.5  Intracardiac valve laceration (rupture)
+52001.5  Corda tendinae laceration (rupture)
+52101.5  Intracardiac septum laceration (rupture)
+52201.2  Pleural laceration
+
+--- Thoracic Cavity ---
+52301.3  Thoracic cavity injury NFS
+52302.3  Thoracic cavity with unilateral hemothorax
+52303.3  Thoracic cavity with unilateral pneumothorax
+52304.3  Thoracic cavity with unilateral hemopneumothorax
+52305.4  Thoracic cavity with bilateral hemothorax
+52306.4  Thoracic cavity with bilateral pneumothorax
+52307.4  Thoracic cavity with bilateral hemopneumothorax
+52308.4  Thoracic cavity with hemomediastinum
+52309.4  Thoracic cavity with pneumomediastinum
+52310.4  Thoracic cavity with tension pneumothorax
+52311.4  Thoracic cavity with >1000cc hemothorax
+52401.2  Thoracic duct laceration
+
+--- Rib Cage ---
+52501.1  Rib cage contusion
+52502.1  Rib fracture NFS
+52503.1  Single rib fracture
+52504.2  Single rib fracture with hemothorax
+52505.2  Single rib fracture with pneumothorax
+52506.2  Single rib fracture with hemomediastinum
+52507.2  Single rib fracture with pneumomediastinum
+52508.2  >1 rib fracture NFS
+52509.2  2-3 ribs, stable chest
+52510.3  2-3 ribs with hemothorax
+52511.3  2-3 ribs with pneumothorax
+52512.3  2-3 ribs with hemomediastinum
+52513.3  2-3 ribs with pneumomediastinum
+52514.2  Multiple fractures of single rib
+52515.3  Multiple fracture single rib with hemothorax
+52516.3  Multiple fracture single rib with pneumothorax
+52517.3  Multiple fracture single rib with hemomediastinum
+52518.3  Multiple fracture single rib with pneumomediastinum
+52519.3  >=4 ribs, stable chest
+52520.4  >=4 ribs with hemothorax
+52521.4  >=4 ribs with pneumothorax
+52522.4  >=4 ribs with hemomediastinum
+52523.4  >=4 ribs with pneumomediastinum
+52524.3  Rib fracture open/displaced/comminuted
+52525.4  Rib open fracture with hemothorax
+52526.4  Rib open fracture with pneumothorax
+52527.4  Rib open fracture with hemomediastinum
+52528.4  Rib open fracture with pneumomediastinum
+52529.4  Flail chest (unstable chest wall)
+52530.5  Flail chest severe (requiring respiratory support)
+
+--- Sternum ---
+52601.1  Sternum contusion
+52602.2  Sternum fracture
+
+===================================================
+ABDOMEN AND PELVIC CONTENTS
+===================================================
+60101.1  Abdominal wall laceration through peritoneum NFS
+60102.2  Abdominal wall laceration simple
+60103.3  Abdominal wall laceration with tissue loss
+60104.1  Abdominal penetrating injury NFS
+60105.1  Penetrating injury simple, no peritoneal penetration
+60106.2  Penetrating injury superficial tissue loss, no peritoneal penetration
+60107.3  Penetrating injury significant tissue loss, no peritoneal penetration
+
+--- Abdominal Aorta ---
+60201.4  Abdominal aorta NFS
+60202.4  Abdominal aorta intimal tear
+60203.4  Abdominal aorta laceration NFS
+60204.4  Abdominal aorta laceration minor
+60205.5  Abdominal aorta laceration major
+60206.6  Abdominal aorta laceration with segmental loss/total severance
+60207.5  Abdominal aorta laceration with thrombosis
+60208.4  Abdominal aorta puncture NFS
+60209.4  Abdominal aorta puncture minor
+60210.5  Abdominal aorta puncture major
+60211.6  Abdominal aorta puncture with segmental loss/total severance
+60212.5  Abdominal aorta puncture with thrombosis
+60213.3  Abdominal aorta thrombosis secondary to trauma
+
+--- Iliac Artery ---
+60301.3  Iliac artery NFS
+60302.3  Iliac artery intimal tear
+60303.3  Iliac artery laceration NFS
+60304.3  Iliac artery laceration minor
+60305.4  Iliac artery laceration major
+60306.5  Iliac artery laceration with segmental loss
+60307.4  Iliac artery laceration with thrombosis
+60308.3  Iliac artery puncture NFS
+60309.3  Iliac artery puncture minor
+60310.4  Iliac artery puncture major
+60311.5  Iliac artery puncture with segmental loss
+60312.4  Iliac artery puncture with thrombosis
+60313.3  Iliac artery thrombosis secondary to trauma
+
+--- Iliac Vein ---
+60401.3  Iliac vein NFS
+60402.3  Iliac vein laceration NFS
+60403.3  Iliac vein laceration minor
+60404.4  Iliac vein laceration major
+60405.4  Iliac vein laceration with segmental loss
+60406.3  Iliac vein puncture NFS
+60407.3  Iliac vein puncture minor
+60408.4  Iliac vein puncture major
+60409.4  Iliac vein puncture with segmental loss
+
+--- Inferior Vena Cava ---
+60501.3  IVC NFS
+60502.3  IVC laceration NFS
+60503.3  IVC laceration minor
+60504.4  IVC laceration major
+60505.5  IVC laceration with segmental loss
+60507.3  IVC puncture NFS
+60508.3  IVC puncture minor
+60509.4  IVC puncture major
+60510.5  IVC puncture with segmental loss
+
+--- Other Abdominal Arteries ---
+60601.3  Other abdominal artery NFS
+60602.3  Other abdominal artery intimal tear
+60603.3  Other abdominal artery laceration NFS
+60604.3  Other abdominal artery laceration minor
+60605.4  Other abdominal artery laceration major
+60606.5  Other abdominal artery laceration with segmental loss
+60607.4  Other abdominal artery laceration with thrombosis
+60608.3  Other abdominal artery puncture NFS
+60609.3  Other abdominal artery puncture minor
+60610.4  Other abdominal artery puncture major
+60611.5  Other abdominal artery puncture with segmental loss
+60612.4  Other abdominal artery puncture with thrombosis
+60613.3  Other abdominal artery thrombosis secondary to trauma
+
+--- Other Abdominal Veins ---
+60701.3  Other abdominal vein NFS
+60702.3  Other abdominal vein laceration NFS
+60703.3  Other abdominal vein laceration minor
+60704.4  Other abdominal vein laceration major
+60705.4  Other abdominal vein laceration with segmental loss
+60706.3  Other abdominal vein puncture NFS
+60707.3  Other abdominal vein puncture minor
+60708.4  Other abdominal vein puncture major
+60709.4  Other abdominal vein puncture with segmental loss
+
+--- Unspecified Abdominal ---
+60801.1  Abdominal injury NFS
+60802.1  Abdominal injury with hematuria
+60803.2  Abdominal injury with hemoperitoneum
+60804.3  Retroperitoneal injury with hemorrhage/hematoma
+
+--- Stomach ---
+60901.2  Stomach NFS
+60902.2  Stomach contusion (hematoma)
+60903.2  Stomach laceration NFS
+60904.2  Stomach laceration no perforation
+60905.4  Stomach laceration perforation
+60906.4  Stomach laceration with tissue loss
+
+--- Duodenum ---
+61001.2  Duodenum NFS
+61002.2  Duodenum contusion (hematoma)
+61003.3  Duodenum laceration NFS
+61004.3  Duodenum laceration no perforation
+61005.4  Duodenum laceration perforation
+61006.5  Duodenum laceration with tissue loss
+
+--- Gallbladder ---
+61101.2  Gallbladder NFS
+61102.2  Gallbladder contusion (hematoma)
+61103.3  Gallbladder perforation NFS
+61104.4  Gallbladder perforation with common/hepatic bile duct
+61105.2  Gallbladder laceration NFS
+61106.2  Gallbladder laceration minor
+61107.3  Gallbladder laceration with common/hepatic bile duct
+61108.3  Gallbladder laceration with tissue loss
+
+--- Colon ---
+61201.2  Colon NFS
+61202.2  Colon contusion (hematoma)
+61203.3  Colon laceration NFS
+61204.3  Colon laceration no perforation
+61205.4  Colon laceration perforation
+61206.5  Colon laceration with tissue loss
+
+--- Mesentery ---
+61301.2  Mesentery NFS
+61302.2  Mesentery contusion (hematoma)
+61303.2  Mesentery laceration NFS
+61304.2  Mesentery laceration minor
+61305.3  Mesentery laceration major
+61306.4  Mesentery laceration with tissue loss
+
+--- Jejunum-Ileum ---
+61401.2  Jejunum-ileum NFS
+61402.2  Jejunum-ileum contusion (hematoma)
+61403.2  Jejunum-ileum laceration NFS
+61404.2  Jejunum-ileum laceration no perforation
+61405.3  Jejunum-ileum laceration perforation
+61406.4  Jejunum-ileum laceration with tissue loss
+
+--- Rectum ---
+61501.2  Rectum NFS
+61502.2  Rectum contusion (hematoma)
+61503.3  Rectum laceration NFS
+61504.3  Rectum laceration no perforation
+61505.4  Rectum laceration perforation
+61506.5  Rectum laceration with tissue loss
+
+--- Anus ---
+61601.2  Anus NFS
+61602.2  Anus contusion (hematoma)
+61603.2  Anus laceration NFS
+61604.2  Anus laceration no perforation
+61605.3  Anus laceration perforation
+61606.4  Anus laceration with tissue loss
+
+--- Kidney/Adrenal ---
+61701.2  Kidney/Adrenal NFS
+61702.2  Kidney/Adrenal contusion NFS
+61703.2  Kidney/Adrenal contusion minor
+61704.3  Kidney/Adrenal contusion major
+61705.2  Kidney/Adrenal laceration NFS
+61706.2  Kidney/Adrenal laceration minor
+61707.3  Kidney/Adrenal laceration with major vessel/hemoperitoneum >1L
+61708.3  Kidney/Adrenal laceration major
+61709.5  Kidney/Adrenal laceration with tissue loss
+
+--- Liver ---
+61801.2  Liver NFS
+61802.2  Liver contusion NFS
+61803.2  Liver contusion minor
+61804.3  Liver contusion major
+61805.2  Liver laceration NFS
+61806.2  Liver laceration minor
+61807.3  Liver laceration with major vessel/duct/hemoperitoneum >1L
+61808.4  Liver laceration major
+61809.5  Liver laceration with tissue loss
+
+--- Spleen ---
+61901.2  Spleen NFS
+61902.2  Spleen contusion NFS
+61903.2  Spleen contusion minor
+61904.3  Spleen contusion major
+61905.2  Spleen laceration (rupture) NFS
+61906.2  Spleen laceration minor
+61907.3  Spleen laceration with major vessel/hemoperitoneum >1L
+61908.3  Spleen laceration major
+61909.5  Spleen laceration with tissue loss
+
+--- Pancreas ---
+62001.2  Pancreas NFS
+62002.2  Pancreas contusion NFS
+62003.2  Pancreas contusion minor
+62004.3  Pancreas contusion major
+62005.2  Pancreas laceration NFS
+62006.2  Pancreas laceration minor
+62007.3  Pancreas laceration with major vessel/duct/hemoperitoneum >1L
+62008.3  Pancreas laceration major
+62009.5  Pancreas laceration with tissue loss
+
+--- Bladder ---
+62101.2  Bladder NFS
+62102.2  Bladder contusion (hematoma)
+62103.2  Bladder laceration NFS
+62104.2  Bladder laceration no perforation
+62105.3  Bladder laceration perforation
+62106.4  Bladder laceration with tissue loss
+
+--- Ureter ---
+62201.2  Ureter NFS
+62202.2  Ureter contusion (hematoma)
+62203.2  Ureter laceration NFS
+62204.2  Ureter laceration no perforation
+62205.3  Ureter laceration perforation
+62206.4  Ureter laceration with tissue loss
+
+--- Urethra ---
+62301.2  Urethra NFS
+62302.2  Urethra contusion (hematoma)
+62303.2  Urethra laceration NFS
+62304.2  Urethra laceration no perforation
+62305.3  Urethra laceration perforation
+62306.4  Urethra laceration with tissue loss
+
+--- Ovary/Fallopian Tube ---
+62401.4  Ovarian (Fallopian) tube laceration
+62501.1  Ovary NFS
+62502.1  Ovary contusion (hematoma)
+62503.2  Ovary laceration NFS
+62504.2  Ovary laceration minor
+62505.3  Ovary laceration major
+62506.4  Ovary laceration complex
+62507.2  Ovary perforation NFS
+62508.2  Ovary perforation minor
+62509.3  Ovary perforation major
+62510.4  Ovary perforation complex
+62601.4  Placental abruption
+
+--- Uterus ---
+62701.1  Uterus NFS
+62702.2  Uterus contusion (hematoma)
+62703.2  Uterus laceration NFS
+62704.2  Uterus laceration minor
+62705.3  Uterus minor laceration 2nd trimester pregnancy
+62706.4  Uterus minor laceration 3rd trimester pregnancy
+62707.3  Uterus laceration major
+62708.4  Uterus major laceration 2nd trimester pregnancy
+62709.5  Uterus major laceration 3rd trimester pregnancy
+62710.3  Uterus laceration complex
+62711.4  Uterus complex laceration 2nd trimester pregnancy
+62712.5  Uterus complex laceration 3rd trimester pregnancy
+62713.2  Uterus perforation NFS
+62714.2  Uterus perforation minor
+62715.3  Uterus minor perforation 2nd trimester pregnancy
+62716.4  Uterus minor perforation 3rd trimester pregnancy
+62717.3  Uterus perforation major
+62718.4  Uterus major perforation 2nd trimester pregnancy
+62719.5  Uterus major perforation 3rd trimester pregnancy
+62720.3  Uterus perforation complex
+62721.4  Uterus complex perforation 2nd trimester pregnancy
+62722.5  Uterus complex perforation 3rd trimester pregnancy
+
+--- Vagina ---
+62801.1  Vagina NFS
+62802.1  Vagina abrasion
+62803.1  Vagina contusion (hematoma)
+62804.1  Vagina laceration NFS
+62805.1  Vagina laceration minor
+62806.3  Vagina laceration major
+62807.3  Vagina laceration complex
+62808.1  Vagina perforation NFS
+62809.1  Vagina perforation minor
+62810.3  Vagina perforation major
+62811.3  Vagina perforation complex
+
+--- Vulva ---
+62901.1  Vulva NFS
+62902.1  Vulva abrasion
+62903.1  Vulva contusion (hematoma)
+62904.1  Vulva laceration NFS
+62905.1  Vulva laceration minor
+62906.3  Vulva laceration major
+62907.3  Vulva laceration complex
+62908.1  Vulva perforation NFS
+62909.1  Vulva perforation minor
+62910.3  Vulva perforation major
+62911.3  Vulva perforation complex
+
+--- Penis ---
+63001.1  Penis NFS
+63002.1  Penis contusion (hematoma)
+63003.2  Penis laceration NFS
+63004.2  Penis laceration minor
+63005.3  Penis laceration major
+63006.4  Penis laceration complex
+63007.2  Penis perforation NFS
+63008.2  Penis perforation minor
+63009.3  Penis perforation major
+
+--- Testis ---
+63101.1  Testis NFS
+63102.1  Testis contusion (hematoma)
+63103.2  Testis laceration NFS
+63104.2  Testis laceration minor
+63105.3  Testis laceration major
+63106.4  Testis laceration complex
+63107.2  Testis perforation NFS
+63108.2  Testis perforation minor
+63109.3  Testis perforation major
+
+--- Scrotum ---
+63201.1  Scrotum NFS
+63202.1  Scrotum abrasion
+63203.1  Scrotum contusion (hematoma)
+63204.1  Scrotum laceration NFS
+63205.1  Scrotum laceration minor
+63206.2  Scrotum laceration major
+63207.3  Scrotum laceration complex
+63208.1  Scrotum perforation NFS
+63209.1  Scrotum perforation minor
+63210.2  Scrotum perforation major
+
+--- Perineum ---
+63301.1  Perineum NFS
+63302.1  Perineum abrasion
+63303.1  Perineum contusion (hematoma)
+63304.1  Perineum laceration NFS
+63305.1  Perineum laceration minor
+63306.3  Perineum laceration major
+63307.3  Perineum laceration complex
+63308.1  Perineum perforation NFS
+63309.1  Perineum perforation minor
+63310.3  Perineum perforation major
+63311.3  Perineum perforation complex
+
+===================================================
+CERVICAL SPINE
+===================================================
+70101.1  Acute strain (no fracture/dislocation)
+
+--- Cord Contusion ---
+70201.3  Cord contusion NFS
+70202.3  Cord contusion, transient signs, no fracture/dislocation
+70203.3  Cord contusion, transient signs, with fracture
+70204.3  Cord contusion, transient signs, with dislocation
+70205.3  Cord contusion, transient signs, with fracture and dislocation
+70206.4  Incomplete cord syndrome NFS
+70207.4  Incomplete cord syndrome with fracture or dislocation
+70208.4  Incomplete cord syndrome with fracture
+70209.4  Incomplete cord syndrome with dislocation
+70210.4  Incomplete cord syndrome with fracture and dislocation
+70211.5  Complete cord syndrome NFS
+70212.5  Complete cord C-4 or below no fracture/dislocation
+70213.5  Complete cord C-4 or below with fracture
+70214.5  Complete cord C-4 or below with dislocation
+70215.5  Complete cord C-4 or below with fracture and dislocation
+70216.6  Complete cord C-3 or above no fracture/dislocation
+70217.6  Complete cord C-3 or above with fracture
+70218.6  Complete cord C-3 or above with dislocation
+70219.6  Complete cord C-3 or above with fracture and dislocation
+
+--- Cord Laceration ---
+70301.5  Cord laceration NFS
+70302.5  Incomplete cord laceration NFS
+70303.5  Incomplete cord laceration no fracture/dislocation
+70304.5  Incomplete cord laceration with fracture
+70305.5  Incomplete cord laceration with dislocation
+70306.5  Incomplete cord laceration with fracture and dislocation
+70307.5  Complete cord laceration NFS
+70308.5  Complete cord laceration C-4 or below no fracture/dislocation
+70309.5  Complete cord laceration C-4 or below with fracture
+70310.5  Complete cord laceration C-4 or below with dislocation
+70311.5  Complete cord laceration C-4 or below with fracture and dislocation
+70312.6  Complete cord laceration C-3 or above no fracture/dislocation
+70313.6  Complete cord laceration C-3 or above with fracture
+70314.6  Complete cord laceration C-3 or above with dislocation
+70315.6  Complete cord laceration C-3 or above with fracture and dislocation
+
+--- Disc / Dislocation / Fracture / Nerve ---
+70401.3  Disc herniation with nerve root damage
+70501.2  Cervical dislocation NFS
+70502.2  Cervical dislocation spinous process
+70503.2  Cervical dislocation transverse process
+70504.2  Cervical dislocation atlanto-occipital
+70505.3  Cervical dislocation facet
+70506.3  Cervical dislocation lamina
+70507.3  Cervical dislocation pedicle
+70508.3  Cervical dislocation odontoid (dens)
+70509.3  Cervical dislocation vertebral body
+70601.2  Cervical fracture NFS
+70602.2  Cervical fracture spinous process
+70603.2  Cervical fracture transverse process
+70604.3  Cervical fracture facet
+70605.3  Cervical fracture lamina
+70606.3  Cervical fracture pedicle
+70607.3  Cervical fracture odontoid (dens)
+70608.2  Cervical fracture vertebral body NFS
+70609.2  Cervical fracture vertebral body minor compression (<=20%)
+70610.3  Cervical fracture vertebral body major compression (>20%)
+70611.3  Cervical fracture multiple adjacent minor compression
+70701.2  Cervical nerve root/trunk/brachial plexus NFS
+70702.2  Cervical nerve root laceration
+70703.2  Cervical nerve root avulsion
+
+===================================================
+THORACIC SPINE
+===================================================
+73101.1  Acute strain (no fracture/dislocation)
+
+--- Cord Contusion ---
+73201.3  Cord contusion NFS
+73202.3  Cord contusion, transient signs, no fracture/dislocation
+73203.3  Cord contusion, transient signs, with fracture
+73204.3  Cord contusion, transient signs, with dislocation
+73205.3  Cord contusion, transient signs, with fracture and dislocation
+73206.4  Incomplete cord syndrome NFS
+73207.4  Incomplete cord syndrome no fracture/dislocation
+73208.4  Incomplete cord syndrome with fracture
+73209.4  Incomplete cord syndrome with dislocation
+73210.4  Incomplete cord syndrome with fracture and dislocation
+73211.5  Complete cord syndrome NFS
+73212.5  Complete cord syndrome no fracture/dislocation
+73213.5  Complete cord syndrome with fracture
+73214.5  Complete cord syndrome with dislocation
+73215.5  Complete cord syndrome with fracture and dislocation
+
+--- Cord Laceration ---
+73301.5  Cord laceration NFS
+73302.5  Incomplete cord laceration NFS
+73303.5  Incomplete cord laceration no fracture/dislocation
+73304.5  Incomplete cord laceration with fracture
+73305.5  Incomplete cord laceration with dislocation
+73306.5  Incomplete cord laceration with fracture and dislocation
+73307.5  Complete cord laceration NFS
+73308.5  Complete cord laceration no fracture/dislocation
+73309.5  Complete cord laceration with fracture
+73310.5  Complete cord laceration with dislocation
+73311.5  Complete cord laceration with fracture and dislocation
+
+--- Disc / Dislocation / Fracture / Nerve ---
+73401.3  Disc herniation with nerve root damage
+73501.2  Thoracic dislocation NFS
+73502.2  Thoracic dislocation spinous process
+73503.2  Thoracic dislocation transverse process
+73504.3  Thoracic dislocation facet
+73505.3  Thoracic dislocation lamina
+73506.3  Thoracic dislocation pedicle
+73507.3  Thoracic dislocation vertebral body
+73601.2  Thoracic fracture NFS
+73602.2  Thoracic fracture spinous process
+73603.3  Thoracic fracture transverse process
+73604.3  Thoracic fracture facet
+73605.3  Thoracic fracture lamina
+73606.3  Thoracic fracture pedicle
+73607.2  Thoracic fracture vertebral body NFS
+73608.2  Thoracic fracture vertebral body minor compression (<=20%)
+73609.3  Thoracic fracture vertebral body major compression (>20%)
+73610.3  Thoracic fracture multiple adjacent minor compression
+73701.2  Thoracic nerve root NFS
+73702.2  Thoracic nerve root laceration
+73703.2  Thoracic nerve root avulsion (rupture)
+
+===================================================
+LUMBAR SPINE
+===================================================
+76101.1  Acute strain (no fracture/dislocation)
+
+--- Cauda Equina Contusion ---
+76201.3  Cauda equina contusion NFS
+76202.3  Cauda equina contusion, transient signs, no fracture/dislocation
+76203.3  Cauda equina contusion, transient signs, with fracture
+76204.3  Cauda equina contusion, transient signs, with dislocation
+76205.3  Cauda equina contusion, transient signs, with fracture and dislocation
+76206.4  Incomplete cauda equina syndrome NFS
+76207.4  Incomplete cauda equina syndrome no fracture/dislocation
+76208.4  Incomplete cauda equina syndrome with fracture
+76209.4  Incomplete cauda equina syndrome with dislocation
+76210.4  Incomplete cauda equina syndrome with fracture and dislocation
+76211.5  Complete cauda equina syndrome NFS
+76212.5  Complete cauda equina syndrome no fracture/dislocation
+76213.5  Complete cauda equina syndrome with fracture
+76214.5  Complete cauda equina syndrome with dislocation
+76215.5  Complete cauda equina syndrome with fracture and dislocation
+
+--- Cord Contusion ---
+76301.3  Cord contusion NFS
+76302.3  Cord contusion, transient signs, no fracture/dislocation
+76303.3  Cord contusion, transient signs, with fracture
+76304.3  Cord contusion, transient signs, with dislocation
+76305.3  Cord contusion, transient signs, with fracture and dislocation
+76306.4  Incomplete cord syndrome NFS
+76307.4  Incomplete cord syndrome no fracture/dislocation
+76308.4  Incomplete cord syndrome with fracture
+76309.4  Incomplete cord syndrome with dislocation
+76310.4  Incomplete cord syndrome with fracture and dislocation
+76311.5  Complete cord syndrome NFS
+76312.5  Complete cord syndrome no fracture/dislocation
+76313.5  Complete cord syndrome with fracture
+76314.5  Complete cord syndrome with dislocation
+76315.5  Complete cord syndrome with fracture and dislocation
+
+--- Cord Laceration ---
+76401.5  Cord laceration NFS
+76402.5  Incomplete cord laceration NFS
+76403.5  Incomplete cord laceration no fracture/dislocation
+76404.5  Incomplete cord laceration with fracture
+76405.5  Incomplete cord laceration with dislocation
+76406.5  Incomplete cord laceration with fracture and dislocation
+76407.5  Complete cord laceration NFS
+76408.5  Complete cord laceration no fracture/dislocation
+76409.5  Complete cord laceration with fracture
+76410.5  Complete cord laceration with dislocation
+76411.5  Complete cord laceration with fracture and dislocation
+
+--- Disc / Dislocation / Fracture / Nerve ---
+76501.3  Disc herniation with nerve root damage
+76601.2  Lumbar dislocation NFS
+76602.2  Lumbar dislocation spinous process
+76603.2  Lumbar dislocation transverse process
+76604.3  Lumbar dislocation facet
+76605.3  Lumbar dislocation lamina
+76606.3  Lumbar dislocation pedicle
+76607.3  Lumbar dislocation vertebral body
+76701.2  Lumbar fracture NFS
+76702.2  Lumbar fracture spinous process
+76703.2  Lumbar fracture transverse process
+76704.3  Lumbar fracture facet
+76705.3  Lumbar fracture lamina
+76706.3  Lumbar fracture pedicle
+76707.2  Lumbar fracture vertebral body NFS
+76708.2  Lumbar fracture vertebral body minor compression (<=20%)
+76709.3  Lumbar fracture vertebral body major compression (>20%)
+76710.3  Lumbar fracture multiple adjacent minor compression
+76801.2  Lumbar nerve root/trunk/sacral plexus NFS
+76802.2  Lumbar nerve root laceration
+76803.2  Lumbar nerve root avulsion (rupture)
+
+===================================================
+UPPER EXTREMITY
+===================================================
+80101.3  Traumatic amputation (except finger)
+80102.3  Crush
+80103.1  Penetrating injury unspecified
+80104.2  Penetrating injury simple, no bone/internal structures
+80105.3  Penetrating injury complex with tissue loss
+
+--- Axillary Artery ---
+80201.2  Axillary artery NFS
+80202.2  Axillary artery intimal tear
+80203.2  Axillary artery laceration NFS
+80204.2  Axillary artery laceration minor
+80205.3  Axillary artery laceration major
+80206.4  Axillary artery laceration with segmental loss
+80207.3  Axillary artery laceration with thrombosis
+80208.2  Axillary artery puncture NFS
+80209.2  Axillary artery puncture minor
+80210.3  Axillary artery puncture major
+80211.4  Axillary artery puncture with segmental loss
+80212.3  Axillary artery puncture with thrombosis
+80213.3  Axillary artery thrombosis secondary to trauma
+
+--- Axillary Vein ---
+80301.2  Axillary vein NFS
+80302.2  Axillary vein laceration NFS
+80303.2  Axillary vein laceration minor
+80304.3  Axillary vein laceration major
+80305.3  Axillary vein laceration with segmental loss
+80306.3  Axillary vein laceration with thrombosis
+80307.2  Axillary vein puncture NFS
+80308.2  Axillary vein puncture minor
+80309.3  Axillary vein puncture major
+80310.3  Axillary vein puncture with segmental loss
+80311.3  Axillary vein puncture with thrombosis
+
+--- Brachial Artery ---
+80401.2  Brachial artery NFS
+80402.2  Brachial artery intimal tear
+80403.3  Brachial artery laceration NFS
+80404.2  Brachial artery laceration minor
+80405.4  Brachial artery laceration major
+80406.4  Brachial artery laceration with segmental loss
+80407.3  Brachial artery laceration with thrombosis
+80408.2  Brachial artery puncture NFS
+80409.2  Brachial artery puncture minor
+80410.3  Brachial artery puncture major
+80411.4  Brachial artery puncture with segmental loss
+80412.3  Brachial artery puncture with thrombosis
+80413.3  Brachial artery thrombosis secondary to trauma
+
+--- Brachial Vein ---
+80501.1  Brachial vein NFS
+80502.1  Brachial vein laceration NFS
+80503.1  Brachial vein laceration minor
+80504.2  Brachial vein laceration major
+80505.2  Brachial vein laceration with segmental loss
+80506.1  Brachial vein puncture NFS
+80507.1  Brachial vein puncture minor
+80508.2  Brachial vein puncture major
+80509.2  Brachial vein puncture with segmental loss
+
+--- Other Upper Extremity Arteries ---
+80601.1  Other upper extremity artery NFS
+80602.1  Other upper extremity artery intimal tear
+80603.1  Other upper extremity artery laceration NFS
+80604.1  Other upper extremity artery laceration minor
+80605.2  Other upper extremity artery laceration major
+80606.2  Other upper extremity artery laceration with segmental loss
+80607.2  Other upper extremity artery laceration with thrombosis
+80608.1  Other upper extremity artery puncture NFS
+80609.1  Other upper extremity artery puncture minor
+80610.2  Other upper extremity artery puncture major
+80611.2  Other upper extremity artery puncture with segmental loss
+80612.2  Other upper extremity artery puncture with thrombosis
+80613.2  Other upper extremity artery thrombosis
+
+--- Other Upper Extremity Veins ---
+80701.1  Other upper extremity vein NFS
+80702.1  Other upper extremity vein laceration NFS
+80703.1  Other upper extremity vein laceration minor
+80704.2  Other upper extremity vein laceration major
+80705.2  Other upper extremity vein laceration with segmental loss
+80706.1  Other upper extremity vein puncture NFS
+80707.1  Other upper extremity vein puncture minor
+80708.2  Other upper extremity vein puncture major
+80709.2  Other upper extremity vein puncture with segmental loss
+
+--- Nerves ---
+80801.2  Median, radial, ulnar nerve laceration
+80802.3  >1 nerve laceration same extremity
+
+--- Muscle/Tendons/Ligaments ---
+80901.2  Biceps laceration (rupture, tear)
+80902.3  Biceps laceration with tissue loss
+81001.2  Tendon laceration (rupture, tear)
+81102.3  >1 tendon same extremity
+81201.2  Major muscle laceration
+81301.2  Major joint capsule laceration
+
+--- Acromioclavicular Joint ---
+81401.1  Acromioclavicular joint NFS
+81402.1  Acromioclavicular joint contusion
+81403.3  Acromioclavicular joint crush
+81404.2  Acromioclavicular joint dislocation (separation)
+81405.2  Acromioclavicular joint laceration
+81406.1  Acromioclavicular joint sprain
+
+--- Elbow ---
+81501.1  Elbow NFS
+81502.1  Elbow contusion
+81503.3  Elbow crush
+81504.2  Elbow dislocation into radial head
+81505.2  Elbow laceration into joint NFS
+81506.2  Elbow laceration with ligament involvement
+81507.3  Elbow laceration with >=2 nerve lacerations
+81508.1  Elbow sprain
+
+--- Hand Joints ---
+81601.1  Interphalangeal dislocation
+81701.2  Carpal-Metacarpal or Metacarpal-Phalangeal dislocation
+
+--- Shoulder ---
+81801.1  Shoulder (glenohumeral) NFS
+81802.1  Shoulder contusion
+81803.3  Shoulder crush
+81804.2  Shoulder dislocation
+81805.2  Shoulder laceration into joint
+81806.1  Shoulder sprain
+
+--- Sternoclavicular Joint ---
+81901.1  Sternoclavicular joint NFS
+81902.1  Sternoclavicular joint contusion
+81903.1  Sternoclavicular joint sprain
+81904.2  Sternoclavicular joint dislocation
+81905.2  Sternoclavicular joint laceration into joint
+81906.3  Sternoclavicular joint crush
+
+--- Wrist ---
+82001.1  Wrist (carpus) NFS
+82002.1  Wrist contusion
+82003.1  Wrist sprain
+82004.2  Wrist laceration into joint
+82005.3  Wrist dislocation (radiocarpal, intercarpal, pericarpal)
+82006.3  Wrist crush
+
+--- Upper Extremity Bones ---
+82101.2  Arm-Forearm-Hand fracture NFS
+82102.2  Carpal or Metacarpal fracture
+82201.1  Finger NFS
+82202.1  Finger fracture
+82203.2  Finger crush
+82204.2  Finger amputation
+82301.2  Radius fracture NFS (with/without styloid, Colles)
+82302.2  Radius fracture closed
+82303.3  Radius fracture open/displaced/comminuted/radial nerve
+82401.2  Ulna fracture NFS
+82402.2  Ulna fracture closed
+82403.3  Ulna fracture open/displaced/comminuted/ulnar nerve
+82501.2  Humerus fracture NFS
+82502.2  Humerus fracture closed
+82503.3  Humerus fracture open/displaced/comminuted/radial nerve
+82601.2  Clavicle fracture
+82701.2  Acromion fracture
+82801.2  Scapula fracture
+
+===================================================
+LOWER EXTREMITY
+===================================================
+90101.3  Traumatic amputation below knee/foot/calcaneus
+90102.4  Traumatic amputation above knee
+90103.3  Crush below knee/foot/calcaneus
+90104.4  Crush above knee
+90105.1  Penetrating injury NFS
+90106.1  Penetrating injury simple, no bone/internal structures
+90701.3  Penetrating injury complex with tissue loss
+
+--- Femoral Artery ---
+90201.3  Femoral artery NFS
+90202.3  Femoral artery intimal tear
+90203.3  Femoral artery laceration NFS
+90204.3  Femoral artery laceration minor
+90205.4  Femoral artery laceration major
+90206.5  Femoral artery laceration with segmental loss
+90207.3  Femoral artery laceration with thrombosis
+90208.3  Femoral artery puncture NFS
+90209.3  Femoral artery puncture minor
+90210.4  Femoral artery puncture major
+90211.5  Femoral artery puncture with segmental loss
+90212.3  Femoral artery puncture with thrombosis
+90213.3  Femoral artery thrombosis secondary to trauma
+
+--- Femoral Vein ---
+90301.2  Femoral vein NFS
+90302.2  Femoral vein laceration NFS
+90303.2  Femoral vein laceration minor
+90304.3  Femoral vein laceration major
+90305.3  Femoral vein laceration with segmental loss
+90306.2  Femoral vein puncture NFS
+90307.2  Femoral vein puncture minor
+90308.3  Femoral vein puncture major
+90309.3  Femoral vein puncture with segmental loss
+
+--- Popliteal Artery ---
+90401.2  Popliteal artery NFS
+90402.2  Popliteal artery intimal tear
+90403.2  Popliteal artery laceration NFS
+90404.2  Popliteal artery laceration minor
+90405.3  Popliteal artery laceration major
+90406.4  Popliteal artery laceration with segmental loss
+90407.3  Popliteal artery laceration with thrombosis
+90408.2  Popliteal artery puncture NFS
+90409.2  Popliteal artery puncture minor
+90410.3  Popliteal artery puncture major
+90411.4  Popliteal artery puncture with segmental loss
+90412.3  Popliteal artery puncture with thrombosis
+90413.3  Popliteal artery thrombosis secondary to trauma
+
+--- Popliteal Vein ---
+90501.2  Popliteal vein NFS
+90502.2  Popliteal vein laceration NFS
+90503.2  Popliteal vein laceration minor
+90504.3  Popliteal vein laceration major
+90505.3  Popliteal vein laceration with segmental loss
+90506.2  Popliteal vein puncture NFS
+90507.2  Popliteal vein puncture minor
+90508.3  Popliteal vein puncture major
+90509.3  Popliteal vein puncture with segmental loss
+
+--- Other Lower Extremity Arteries ---
+90601.1  Other lower extremity artery NFS
+90602.1  Other lower extremity artery intimal tear
+90603.1  Other lower extremity artery laceration NFS
+90604.1  Other lower extremity artery laceration minor
+90605.2  Other lower extremity artery laceration major
+90606.2  Other lower extremity artery laceration with segmental loss
+90607.2  Other lower extremity artery laceration with thrombosis
+90608.1  Other lower extremity artery puncture NFS
+90609.1  Other lower extremity artery puncture minor
+90610.2  Other lower extremity artery puncture major
+90611.2  Other lower extremity artery puncture with segmental loss
+90612.2  Other lower extremity artery puncture with thrombosis
+90613.2  Other lower extremity artery thrombosis
+
+--- Other Lower Extremity Veins ---
+90701.1  Other lower extremity vein NFS
+90702.1  Other lower extremity vein laceration NFS
+90703.1  Other lower extremity vein laceration minor
+90704.2  Other lower extremity vein laceration major
+90705.2  Other lower extremity vein laceration with segmental loss
+90706.1  Other lower extremity vein puncture NFS
+90707.1  Other lower extremity vein puncture minor
+90708.2  Other lower extremity vein puncture major
+90709.2  Other lower extremity vein puncture with segmental loss
+
+--- Nerves ---
+90801.3  Sciatic nerve laceration
+90901.2  Femoral, tibial, peroneal nerve laceration
+90902.3  >=2 lacerations same extremity
+
+--- Muscle/Tendons/Ligaments ---
+91001.2  Achilles tendon laceration
+91101.2  Collateral/cruciate ligament laceration ankle
+91102.3  Collateral/cruciate ligament laceration knee
+91201.2  Major muscle laceration
+91301.2  Major tendon laceration
+91302.3  Multiple tendons
+91401.2  Patellar tendon laceration
+91402.3  Patellar tendon total transection
+
+--- Foot Joints ---
+91501.1  Foot joint NFS
+91502.1  Foot joint sprain
+91503.1  Foot joint dislocation
+91601.1  Subtalar/transtarsal/transmetatarsal NFS
+91602.1  Subtalar/transtarsal/transmetatarsal sprain
+91603.1  Subtalar/transtarsal/transmetatarsal dislocation
+
+--- Ankle ---
+91701.1  Ankle NFS
+91702.1  Ankle contusion
+91703.1  Ankle sprain
+91704.2  Ankle laceration into joint
+91705.3  Ankle dislocation
+91706.3  Ankle crush
+
+--- Knee ---
+91801.1  Knee NFS
+91802.1  Knee contusion
+91803.2  Knee sprain
+91804.2  Knee laceration into joint
+91805.3  Knee dislocation
+91806.3  Knee crush
+
+--- Hip ---
+91901.1  Hip sprain
+91902.3  Hip dislocation with/without fracture of acetabulum/femoral head/neck/intertrochanteric
+
+--- Lower Extremity Bones ---
+92001.2  Foot fracture NFS
+92101.2  Metatarsal/Tatar or Tarsal fracture
+92201.2  Calcaneus fracture
+92301.1  Toe NFS
+92302.1  Toe fracture
+92303.2  Toe crush
+92304.2  Toe amputation
+92401.1  Tibia fracture NFS (shaft, malleolus, plateau, condyles)
+92402.2  Tibia fracture closed
+92403.3  Tibia fracture open/displaced/comminuted
+92501.1  Fibula contusion
+92502.2  Fibula contusion with peroneal nerve involvement
+92503.2  Fibula fracture NFS (head, neck, shaft, lateral malleolus, bi/trimalleolar)
+92504.2  Fibula fracture closed
+92505.3  Fibula fracture open/displaced/comminuted/nerve involvement
+92601.3  Femur fracture (condyle, head, neck, shaft with/without sciatic nerve)
+92701.2  Patella fracture
+
+--- Pelvis ---
+92801.2  Pelvis fracture NFS
+92802.2  Pelvis fracture closed
+92803.3  Pelvis fracture open/displaced/comminuted
+92901.4  Pelvis crush NFS
+92902.4  Pelvis crush closed
+92903.5  Pelvis crush open
+93001.3  Sacroiliac fracture with/without dislocation
+93101.3  Symphysis pubic separation (fracture)
+
+===================================================
+END OF AIS 1985 CODE LIST
+===================================================

@@ -1,7 +1,5 @@
 package com.example.oop.chat.mvi
 
-import android.net.Uri
-
 sealed interface ChatIntent {
     data object LoadModel : ChatIntent
 
@@ -11,13 +9,13 @@ sealed interface ChatIntent {
 
     data object CancelDownload : ChatIntent
 
-    data class InputChanged(val text: String) : ChatIntent
+    data class ToggleClassification(val enabled: Boolean) : ChatIntent
 
-    data class AttachPhoto(val uri: Uri) : ChatIntent
+    data object StartTranscription : ChatIntent
 
-    data object ClearPendingPhoto : ChatIntent
+    data object StopTranscription : ChatIntent
 
-    data object SendMessage : ChatIntent
+    data object CapturePhoto : ChatIntent
 
     data object ResetConversation : ChatIntent
 

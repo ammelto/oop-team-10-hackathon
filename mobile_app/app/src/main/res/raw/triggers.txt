@@ -1,0 +1,145 @@
+prep for | procedure_initiation | procedure site and equipment layout | 0
+prepping | procedure_initiation | procedure site and equipment layout | 0
+setting up for | procedure_initiation | procedure site and equipment layout | 0
+placing | procedure_initiation | insertion site and device | 0
+inserting | procedure_initiation | insertion site and device | 0
+going in with | procedure_initiation | insertion site and device | 0
+cutting | procedure_initiation | incision site and blade | 0
+incising | procedure_initiation | incision site and blade | 0
+making the incision | procedure_initiation | incision site and blade | 0
+needle in | procedure_initiation | needle entry site | 1
+needle decompression | procedure_initiation | chest wall needle placement | 0
+intubating | procedure_initiation | airway and laryngoscope view | 0
+passing the tube | procedure_initiation | airway and ET tube | 0
+tube's going in | procedure_initiation | airway and ET tube | 0
+cric | procedure_initiation | anterior neck and cricothyroid membrane | 1
+cricothyrotomy | procedure_initiation | anterior neck and cricothyroid membrane | 0
+central line | procedure_initiation | access site and catheter | 0
+IO | procedure_initiation | IO insertion site on bone | 1
+drilling | procedure_initiation | IO insertion site on bone | 0
+tourniquet on | procedure_initiation | tourniquet placement and limb | 0
+tourniquet up | procedure_initiation | tourniquet placement and limb | 0
+packing the wound | procedure_initiation | wound cavity and packing material | 0
+reducing | procedure_initiation | fracture or dislocation site | 0
+starting compressions | procedure_initiation | chest and hand placement | 0
+compressions going | procedure_initiation | chest and hand placement | 0
+shocking | procedure_initiation | pad placement and monitor | 0
+clear | procedure_initiation | pad placement and monitor | 1
+defibrillating | procedure_initiation | pad placement and monitor | 0
+tube's in | procedure_confirmation | tube depth and securement | 0
+line's in | procedure_confirmation | catheter and insertion site | 0
+needle's in | procedure_confirmation | needle position on patient | 0
+good placement | procedure_confirmation | device position | 0
+confirmed placement | procedure_confirmation | device position | 0
+rush of air | procedure_confirmation | chest decompression site | 0
+air return | procedure_confirmation | chest decompression site | 0
+blood return | procedure_confirmation | catheter hub or collection container | 0
+flash | procedure_confirmation | catheter hub | 1
+got flash | procedure_confirmation | catheter hub | 0
+output | procedure_confirmation | collection canister or container | 1
+cc of | procedure_confirmation | collection canister with volume markings | 1
+mLs of | procedure_confirmation | collection canister with volume markings | 1
+pulse back | procedure_confirmation | monitor rhythm and patient | 0
+ROSC | procedure_confirmation | monitor rhythm and patient | 0
+got a pulse | procedure_confirmation | monitor rhythm and patient | 0
+capture | procedure_confirmation | monitor pacing spikes | 1
+pacing capture | procedure_confirmation | monitor pacing spikes | 0
+secured | procedure_confirmation | device securement and site | 0
+sutured | procedure_confirmation | closure site | 0
+taped in | procedure_confirmation | device securement and site | 0
+entry wound | wound_identification | wound site with scale reference | 0
+exit wound | wound_identification | wound site with scale reference | 0
+GSW | wound_identification | wound site with scale reference | 0
+gunshot | wound_identification | wound site with scale reference | 0
+stab wound | wound_identification | wound morphology and length | 0
+laceration | wound_identification | wound morphology and length | 0
+lac | wound_identification | wound morphology and length | 0
+open fracture | wound_identification | exposed bone and surrounding tissue | 0
+bone exposed | wound_identification | exposed bone and surrounding tissue | 0
+evisceration | wound_identification | abdominal wound and exposed viscera | 0
+bowel out | wound_identification | abdominal wound and exposed viscera | 0
+degloving | wound_identification | avulsed tissue and underlying structures | 0
+avulsion | wound_identification | avulsed tissue and underlying structures | 0
+burn | wound_identification | burn surface area and depth | 0
+partial thickness | wound_identification | burn surface and depth | 0
+full thickness | wound_identification | burn surface and depth | 0
+circumferential | wound_identification | full limb or torso burn extent | 0
+impaled | wound_identification | object and entry site | 0
+impalement | wound_identification | object and entry site | 0
+amputation | wound_identification | stump and missing segment | 0
+amputated | wound_identification | stump and missing segment | 0
+ecchymosis | wound_identification | bruising pattern and distribution | 0
+bruising | wound_identification | bruising pattern and distribution | 0
+seatbelt sign | wound_identification | torso bruising pattern | 0
+raccoon eyes | wound_identification | periorbital bruising | 0
+Battle's sign | wound_identification | mastoid bruising | 0
+deformity | wound_identification | limb or body contour | 0
+obvious deformity | wound_identification | limb or body contour | 0
+angulated | wound_identification | limb angulation | 0
+crepitus | wound_identification | palpation site | 1
+pupils | exam_finding | both eyes with light reference | 0
+blown pupil | exam_finding | affected pupil close-up | 0
+unequal | exam_finding | both eyes comparison | 0
+tracheal deviation | exam_finding | anterior neck and trachea | 0
+trachea is | exam_finding | anterior neck and trachea | 0
+JVD | exam_finding | neck with patient at 30-45 degrees | 0
+jugular | exam_finding | neck veins | 0
+flail segment | exam_finding | chest wall during respiration | 0
+paradoxical | exam_finding | chest wall during respiration | 0
+sucking chest wound | exam_finding | chest wound during respiration | 0
+distended | exam_finding | abdomen contour | 0
+pelvis is | exam_finding | pelvic region | 0
+skin is | exam_finding | skin color and moisture | 0
+cap refill | exam_finding | nail bed or fingertip | 0
+posturing | exam_finding | full body positioning | 0
+decorticate | exam_finding | full body positioning | 0
+decerebrate | exam_finding | full body positioning | 0
+bleeding | hemorrhage | bleeding source and volume | 0
+bleeding out | hemorrhage | bleeding source and volume | 0
+hemorrhaging | hemorrhage | bleeding source and volume | 0
+pooling | hemorrhage | blood accumulation area | 0
+pool of blood | hemorrhage | blood accumulation area | 0
+soaked | hemorrhage | saturated dressings or clothing | 0
+saturated | hemorrhage | saturated dressings or clothing | 0
+pumping | hemorrhage | arterial bleeding source | 0
+pulsatile | hemorrhage | arterial bleeding source | 0
+arterial | hemorrhage | arterial bleeding source | 0
+clot | hemorrhage | clot formation at wound | 0
+clotting | hemorrhage | clot formation at wound | 0
+losing him | status_change | patient face and monitor | 0
+losing her | status_change | patient face and monitor | 0
+crashing | status_change | patient face and monitor | 0
+coding | status_change | patient and monitor | 0
+he's coding | status_change | patient and monitor | 0
+full arrest | status_change | patient and monitor | 0
+no pulse | status_change | patient and monitor rhythm | 0
+pulseless | status_change | patient and monitor rhythm | 0
+not breathing | status_change | chest rise and airway | 0
+apneic | status_change | chest rise and airway | 0
+unresponsive | status_change | patient face and posture | 0
+agonal | status_change | patient face and respirations | 0
+seizing | status_change | full body movement | 0
+seizure | status_change | full body movement | 0
+on scene | scene_context | wide scene overview | 0
+we're on scene | scene_context | wide scene overview | 0
+scene is | scene_context | wide scene overview | 0
+mechanism | scene_context | mechanism of injury | 0
+vehicle | scene_context | vehicle damage and position | 0
+rollover | scene_context | vehicle damage and position | 0
+ejected | scene_context | vehicle and ejection path | 0
+fall from | scene_context | height and landing surface | 0
+jumped from | scene_context | height and landing surface | 0
+entrapment | scene_context | patient and entrapping structure | 0
+extrication | scene_context | patient and entrapping structure | 0
+pinned | scene_context | patient and entrapping structure | 0
+multiple patients | scene_context | wide scene overview | 0
+MCI | scene_context | wide scene overview | 0
+mass casualty | scene_context | wide scene overview | 0
+monitor shows | equipment_visualization | monitor screen | 0
+rhythm is | equipment_visualization | monitor rhythm strip | 0
+vent settings | equipment_visualization | ventilator display | 0
+on the vent | equipment_visualization | ventilator display and circuit | 0
+pressure bag | equipment_visualization | pressure bag and IV setup | 0
+rapid transfuser | equipment_visualization | transfuser and blood products | 0
+pacer on | equipment_visualization | monitor and pacing pads | 0
+pacing at | equipment_visualization | monitor pacing rate | 0
