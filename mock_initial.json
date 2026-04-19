@@ -1,0 +1,34 @@
+{
+  "encounter_id": "TRX-20480418-001",
+  "timestamp": "2048-04-18T14:32:00Z",
+  "event_type": "initial",
+  "patient": {
+    "estimated_age": "30s",
+    "sex": "Male",
+    "mrn": "TRX-20480418"
+  },
+  "mechanism": "GSW left anterior chest, 4th ICS mid-clavicular",
+  "primary_diagnosis": "Left hemopneumothorax",
+  "trauma_level": 1,
+  "vitals_timeline": [
+    { "time": "T+0:00", "hr": 124, "sbp": 94, "dbp": 60, "spo2": 94, "rr": 24 },
+    { "time": "T+2:00", "hr": 118, "sbp": 98, "dbp": 62, "spo2": 95, "rr": 22 },
+    { "time": "T+4:00", "hr": 122, "sbp": 96, "dbp": 58, "spo2": 94, "rr": 23 }
+  ],
+  "procedures": [
+    { "time": "T+1:30", "description": "Left chest tube placed, 5th ICS mid-axillary line — air return + 200cc blood" },
+    { "time": "T+2:15", "description": "18G IV x2 bilateral antecubital, blood draw sent to lab" }
+  ],
+  "medications": [
+    { "time": "T+1:45", "description": "TXA 1g IV bolus over 10 min" },
+    { "time": "T+2:30", "description": "Whole blood x1 unit, O-neg, warmed" }
+  ],
+  "clinical_note": "TRAUMA NOTE — Initial Assessment\n\nSUBJECTIVE:\nEMS reports 30s male found at scene of shooting with single GSW to the left anterior chest at approximately the 4th intercostal space, mid-clavicular line. Patient was ambulatory briefly at scene, then deteriorated. GCS 14 on scene, transported lights and sirens.\n\nOBJECTIVE:\nVitals on arrival: HR 124, BP 94/60, SpO2 94%, RR 24\nDecreased breath sounds left base. Trachea midline. Equal chest rise.\nWound: 1cm entry, left anterior chest, 4th ICS MCL. No obvious exit wound.\n\nASSESSMENT:\n- Left hemopneumothorax secondary to penetrating trauma\n- Class II hemorrhagic shock\n- Penetrating cardiac injury cannot be excluded\n\nPLAN:\n- Immediate chest tube thoracostomy performed (5th ICS MAL)\n- TXA 1g IV initiated\n- Massive transfusion protocol on standby\n- Emergent CXR obtained\n- Trauma surgery and cardiothoracic surgery on standby\n- OR on standby",
+  "icd10_codes": ["S27.2XXA", "S21.101A", "J93.11", "R57.8"],
+  "ais_score": 4,
+  "hospital_notification_summary": "TRAUMA LEVEL 1 ACTIVATION — ETA 8 minutes. Male, 30s, GSW left anterior chest 4th ICS mid-clavicular. Suspected hemopneumothorax, Class II shock. Chest tube placed prehospital, TXA on board. HR 124, BP 94/60, SpO2 94%. Requires trauma bay, O-neg blood, MTP on standby. Request cardiothoracic surgery on call.",
+  "transcript": "EMS Unit 7 to receiving: We have a 30-something male, gunshot wound to the left chest. Single entry wound, no visible exit. Found down approximately 2 minutes after shot fired. GCS was 14 at scene, came down to 13 during transport. BP has been soft, sitting 90 over 60. Heart rate is 124. Sats are holding at 94 on 15 liters non-rebreather. Breath sounds diminished on the left, we are thinking hemo-pneumo. We placed a chest tube at T plus one thirty, got good air return and about 200 CCs of blood. We pushed TXA and have a unit of O-neg running. ETA to you is 8 minutes. We are going to need trauma bay, more blood. Request your thoracic surgeon be on standby.",
+  "images": [],
+  "status": "borderline",
+  "resuscitation_events": []
+}

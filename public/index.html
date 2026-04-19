@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trauma EMR — Live</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --page-bg:     #f0f2f4;
+      --white:       #ffffff;
+      --border:      #c8cdd3;
+      --border-lt:   #e0e4e8;
+      --txt:         #1a1a1a;
+      --txt-sec:     #4a5568;
+      --txt-muted:   #718096;
+      --lbl:         #5a6a7a;
+      --sidebar-bg:  #1a6b5e;
+      --sidebar-act: #124f46;
+      --sec-hd-bg:   #2e6096;
+      --sec-hd-txt:  #ffffff;
+      --sec-hd-resus:#b91c1c;
+      --red:         #b91c1c;
+      --red-lt:      #fef2f2;
+      --red-border:  #fca5a5;
+      --amber:       #92400e;
+      --amber-lt:    #fffbeb;
+      --amber-border:#fcd34d;
+      --green:       #14532d;
+      --green-lt:    #f0fdf4;
+      --green-border:#86efac;
+      --blue:        #1e40af;
+      --row-alt:     #f8f9fa;
+      --font:        Arial, 'Segoe UI', Helvetica, sans-serif;
+      --mono:        'Courier New', 'Lucida Console', monospace;
+    }
+
+    html, body { height: 100%; }
+    body {
+      font-family: var(--font);
+      font-size: 13px;
+      color: var(--txt);
+      background: var(--page-bg);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* ── TOP HEADER BAR ──────────────────────────────────────────── */
+    #header {
+      background: #dde3ea;
+      border-bottom: 2px solid #b0bac5;
+      padding: 0 16px;
+      display: flex;
+      align-items: stretch;
+      flex-shrink: 0;
+      min-height: 52px;
+    }
+
+    .hdr-brand {
+      display: flex;
+      align-items: center;
+      font-size: 15px;
+      font-weight: bold;
+      color: #1a3a5c;
+      padding-right: 16px;
+      border-right: 1px solid #b0bac5;
+      margin-right: 16px;
+      white-space: nowrap;
+      letter-spacing: .3px;
+    }
+    .hdr-brand span { color: #2e6096; margin-right: 6px; font-size: 18px; }
+
+    .hdr-fields { display: flex; align-items: center; flex: 1; gap: 0; }
+
+    .hdr-cell {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 6px 14px 6px 0;
+      margin-right: 14px;
+      border-right: 1px solid #b0bac5;
+    }
+    .hdr-cell:last-of-type { border-right: none; }
+    .hdr-lbl {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: .8px;
+      color: var(--txt-muted);
+      margin-bottom: 2px;
+    }
+    .hdr-val {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--txt);
+      white-space: nowrap;
+      max-width: 220px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* Trauma level label — rectangular, clinical */
+    #hdr-level {
+      display: inline-block;
+      padding: 2px 8px;
+      font-size: 11px;
+      font-weight: bold;
+      border: 1px solid;
+      letter-spacing: .5px;
+    }
+    #hdr-level.hidden { display: none; }
+    .level-1 { background: #fee2e2; color: #991b1b; border-color: #fca5a5; }
+    .level-2 { background: #fef3c7; color: #92400e; border-color: #fcd34d; }
+
+    /* Status — text field, not badge */
+    #hdr-status {
+      font-size: 13px;
+      font-weight: 600;
+    }
+    #hdr-status.hidden { display: none; }
+    .st-stable      { color: #15803d; }
+    .st-borderline  { color: #b45309; }
+    .st-peri-arrest { color: #b91c1c; }
+    .st-post-rosc   { color: #b91c1c; }
+
+    .hdr-right { margin-left: auto; display: flex; align-items: center; gap: 12px; }
+
+    /* ── ALERT BANNER ────────────────────────────────────────────── */
+    #banner {
+      padding: 5px 16px;
+      font-size: 12px;
+      font-weight: bold;
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .bn-wait     { background: #f0f2f4; color: var(--txt-muted); border-left: 4px solid #9ca3af; }
+    .bn-inbound  { background: var(--amber-lt); color: var(--amber); border-left: 4px solid var(--amber-border); }
+    .bn-critical { background: var(--red-lt); color: var(--red); border-left: 4px solid var(--red-border); }
+
+    /* ── BODY LAYOUT ─────────────────────────────────────────────── */
+    #body-wrap {
+      flex: 1;
+      display: flex;
+      overflow: hidden;
+    }
+
+    /* ── SIDEBAR ─────────────────────────────────────────────────── */
+    #sidebar {
+      width: 158px;
+      flex-shrink: 0;
+      background: var(--sidebar-bg);
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nav-group-lbl {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: rgba(255,255,255,.45);
+      padding: 14px 14px 4px;
+    }
+
+    .nav-item {
+      padding: 8px 14px 8px 16px;
+      font-size: 12px;
+      color: rgba(255,255,255,.82);
+      cursor: pointer;
+      border-left: 3px solid transparent;
+      user-select: none;
+      transition: background .1s;
+      text-decoration: none;
+      display: block;
+    }
+    .nav-item:hover  { background: rgba(0,0,0,.18); color: #fff; }
+    .nav-item.active { background: var(--sidebar-act); border-left-color: #a7f3d0; color: #fff; }
+
+    .nav-divider { height: 1px; background: rgba(255,255,255,.1); margin: 6px 0; }
+
+    /* ── MAIN CONTENT ────────────────────────────────────────────── */
+    #content {
+      flex: 1;
+      overflow-y: auto;
+      padding: 14px 16px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    /* ── AWAITING STATE ──────────────────────────────────────────── */
+    #await-overlay {
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 40px;
+      text-align: center;
+      color: var(--txt-muted);
+    }
+    #await-overlay h3 { font-size: 15px; margin-bottom: 6px; color: var(--txt-sec); }
+    #await-overlay p  { font-size: 12px; }
+
+    .hidden { display: none !important; }
+
+    /* ── SECTION BOX ─────────────────────────────────────────────── */
+    .sec-box {
+      background: var(--white);
+      border: 1px solid var(--border);
+    }
+
+    .sec-hd {
+      background: var(--sec-hd-bg);
+      color: var(--sec-hd-txt);
+      padding: 5px 12px;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: .4px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .sec-hd-resus { background: var(--sec-hd-resus); }
+
+    .sec-hd-right {
+      font-size: 11px;
+      font-weight: normal;
+      opacity: .85;
+    }
+
+    .sec-body { padding: 10px 12px; }
+    .sec-body-bare { }
+
+    /* ── FIELD GRID (two-column labeled fields) ──────────────────── */
+    .field-row {
+      display: flex;
+      border-bottom: 1px solid var(--border-lt);
+    }
+    .field-row:last-child { border-bottom: none; }
+
+    .field-cell {
+      flex: 1;
+      padding: 6px 10px;
+      border-right: 1px solid var(--border-lt);
+      min-width: 0;
+    }
+    .field-cell:last-child { border-right: none; }
+    .field-cell.wide { flex: 2; }
+
+    .f-lbl {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: .7px;
+      color: var(--lbl);
+      display: block;
+      margin-bottom: 2px;
+    }
+    .f-val {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--txt);
+      display: block;
+    }
+    .f-val.muted { font-weight: normal; color: var(--txt-sec); font-size: 12px; }
+
+    /* ── VITALS FLOWSHEET HEADER ─────────────────────────────────── */
+    #vitals-now {
+      display: flex;
+      border-bottom: 1px solid var(--border-lt);
+      margin-bottom: 12px;
+    }
+
+    .vf-cell {
+      flex: 1;
+      padding: 7px 12px;
+      border-right: 1px solid var(--border-lt);
+    }
+    .vf-cell:last-child { border-right: none; }
+    .vf-lbl {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: .7px;
+      color: var(--lbl);
+      display: block;
+      margin-bottom: 2px;
+    }
+    .vf-val {
+      font-size: 20px;
+      font-weight: bold;
+      display: block;
+      line-height: 1.1;
+    }
+    .vf-unit { font-size: 10px; color: var(--txt-muted); }
+    .c-hr   { color: #b91c1c; }
+    .c-sbp  { color: #1e40af; }
+    .c-spo2 { color: #15803d; }
+    .c-rr   { color: #6d28d9; }
+
+    #chart-wrap { position: relative; height: 200px; }
+
+    .chart-legend {
+      display: flex;
+      gap: 16px;
+      padding: 6px 12px;
+      border-top: 1px solid var(--border-lt);
+      font-size: 11px;
+      color: var(--txt-sec);
+    }
+    .legend-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 4px; vertical-align: middle; }
+
+    /* ── CLINICAL TABLE (procedures, medications, resus, activity) ── */
+    .clin-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+    }
+    .clin-table th {
+      background: #f0f4f8;
+      border: 1px solid var(--border);
+      padding: 5px 10px;
+      text-align: left;
+      font-size: 11px;
+      font-weight: bold;
+      color: var(--txt-sec);
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+    .clin-table td {
+      border: 1px solid var(--border-lt);
+      padding: 5px 10px;
+      vertical-align: top;
+      line-height: 1.45;
+    }
+    .clin-table tr:nth-child(even) td { background: var(--row-alt); }
+    .clin-table .td-time {
+      white-space: nowrap;
+      width: 70px;
+      color: var(--txt-sec);
+      font-family: var(--mono);
+      font-size: 11px;
+    }
+    .clin-table .td-crit td { color: var(--red); }
+
+    /* Activity log table */
+    .act-ts { white-space: nowrap; width: 80px; color: var(--txt-muted); font-family: var(--mono); font-size: 11px; }
+    .act-evt { color: var(--txt); }
+    .act-crit td { background: #fff5f5 !important; color: var(--red); font-weight: 600; }
+    .act-warn td { background: #fffbeb !important; color: var(--amber); }
+
+    /* ── NOTIFICATION BAR ────────────────────────────────────────── */
+    .notif-bar {
+      background: var(--amber-lt);
+      border: 1px solid var(--amber-border);
+      border-left: 4px solid #f59e0b;
+      padding: 8px 12px;
+      font-size: 12px;
+      line-height: 1.55;
+      color: #78350f;
+    }
+
+    /* ── ASSESSMENT NOTE ─────────────────────────────────────────── */
+    .note-area {
+      font-family: var(--mono);
+      font-size: 11.5px;
+      line-height: 1.75;
+      color: var(--txt);
+      white-space: pre-wrap;
+      background: var(--white);
+      border: 1px solid #ced4da;
+      padding: 10px 12px;
+      min-height: 180px;
+      max-height: 320px;
+      overflow-y: auto;
+      resize: none;
+      width: 100%;
+    }
+
+    /* ── ICD / AIS ───────────────────────────────────────────────── */
+    .icd-wrap { display: flex; flex-wrap: wrap; gap: 4px; }
+    .icd-chip {
+      font-family: var(--mono);
+      font-size: 11px;
+      padding: 2px 7px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      color: #1e40af;
+    }
+    .ais-display { font-size: 28px; font-weight: bold; color: var(--red); font-family: var(--mono); }
+    .ais-sub { font-size: 10px; color: var(--txt-muted); text-transform: uppercase; letter-spacing: .7px; }
+
+    /* ── TRANSCRIPT ──────────────────────────────────────────────── */
+    .tog-btn {
+      background: #e8edf2;
+      border: 1px solid var(--border);
+      color: #2e6096;
+      cursor: pointer;
+      font-size: 11px;
+      padding: 2px 10px;
+      font-family: var(--font);
+    }
+    .tog-btn:hover { background: #d8e3ee; }
+    .collapse-body { display: none; }
+    .collapse-body.open { display: block; }
+    .txscript {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--txt-sec);
+      white-space: pre-wrap;
+      line-height: 1.6;
+      max-height: 240px;
+      overflow-y: auto;
+      padding: 10px 12px;
+      background: #fafafa;
+      border-top: 1px solid var(--border-lt);
+    }
+
+    /* ── IMAGES ──────────────────────────────────────────────────── */
+    .img-row { display: flex; flex-wrap: wrap; gap: 10px; }
+    .img-thumb-wrap { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+    .enc-img {
+      width: 120px; height: 90px;
+      object-fit: cover;
+      border: 1px solid var(--border);
+      background: #f0f0f0;
+    }
+    .img-view-lnk { font-size: 11px; color: #2e6096; text-decoration: underline; cursor: pointer; }
+    .no-images {
+      padding: 14px 12px;
+      color: var(--txt-muted);
+      font-size: 12px;
+      font-style: italic;
+    }
+
+    /* ── SCROLLBAR ───────────────────────────────────────────────── */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #e8ecf0; }
+    ::-webkit-scrollbar-thumb { background: #b0bac5; }
+    ::-webkit-scrollbar-thumb:hover { background: #8a98a8; }
+  </style>
+</head>
+<body>
+
+<!-- ── TOP HEADER BAR ──────────────────────────────────────────── -->
+<div id="header">
+  <div class="hdr-brand"><span>⊕</span> Trauma EMR</div>
+  <div class="hdr-fields">
+    <div class="hdr-cell">
+      <span class="hdr-lbl">Patient</span>
+      <span class="hdr-val" id="hdr-patient">Trauma Patient</span>
+    </div>
+    <div class="hdr-cell">
+      <span class="hdr-lbl">MRN</span>
+      <span class="hdr-val" id="hdr-mrn">—</span>
+    </div>
+    <div class="hdr-cell">
+      <span class="hdr-lbl">Age / Sex</span>
+      <span class="hdr-val" id="hdr-agesex">—</span>
+    </div>
+    <div class="hdr-cell">
+      <span class="hdr-lbl">Encounter Date</span>
+      <span class="hdr-val" id="hdr-date">—</span>
+    </div>
+    <div class="hdr-cell">
+      <span class="hdr-lbl">Trauma Level</span>
+      <span class="hdr-val"><span id="hdr-level" class="hidden">—</span></span>
+    </div>
+    <div class="hdr-cell">
+      <span class="hdr-lbl">Status</span>
+      <span class="hdr-val"><span id="hdr-status" class="hidden">—</span></span>
+    </div>
+  </div>
+</div>
+
+<!-- ── ALERT BANNER ────────────────────────────────────────────── -->
+<div id="banner" class="bn-wait">Awaiting inbound trauma notification</div>
+
+<!-- ── BODY ────────────────────────────────────────────────────── -->
+<div id="body-wrap">
+
+  <!-- SIDEBAR NAV -->
+  <nav id="sidebar">
+    <div class="nav-group-lbl">Patient Record</div>
+    <a class="nav-item active" href="#sec-chart"     onclick="navClick(this)">Patient Chart</a>
+    <a class="nav-item"        href="#sec-vitals"    onclick="navClick(this)">Vitals</a>
+    <div class="nav-divider"></div>
+    <div class="nav-group-lbl">Clinical</div>
+    <a class="nav-item"        href="#sec-procedures" onclick="navClick(this)">Procedures</a>
+    <a class="nav-item"        href="#sec-medications" onclick="navClick(this)">Medications</a>
+    <a class="nav-item"        href="#sec-resus"      onclick="navClick(this)">Resuscitation</a>
+    <div class="nav-divider"></div>
+    <div class="nav-group-lbl">Documentation</div>
+    <a class="nav-item"        href="#sec-assessment" onclick="navClick(this)">Assessment</a>
+    <a class="nav-item"        href="#sec-coding"     onclick="navClick(this)">Coding</a>
+    <a class="nav-item"        href="#sec-transcript" onclick="navClick(this)">Transcript</a>
+    <div class="nav-divider"></div>
+    <div class="nav-group-lbl">Encounter</div>
+    <a class="nav-item"        href="#sec-activity"   onclick="navClick(this)">Activity Log</a>
+    <a class="nav-item"        href="#sec-images"     onclick="navClick(this)">Images</a>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <div id="content">
+
+    <!-- Awaiting -->
+    <div id="await-overlay">
+      <h3>No Active Encounter</h3>
+      <p>Awaiting incoming trauma notification. POST to /encounter to begin.</p>
+    </div>
+
+    <!-- Clinical record — hidden until encounter arrives -->
+    <div id="clinical" class="hidden">
+
+      <!-- Patient Chart -->
+      <div class="sec-box" id="sec-chart">
+        <div class="sec-hd">
+          Patient Chart
+          <span class="sec-hd-right" id="encounter-id-display"></span>
+        </div>
+        <div class="sec-body-bare">
+          <div class="field-row">
+            <div class="field-cell">
+              <span class="f-lbl">Patient</span>
+              <span class="f-val" id="chart-patient">—</span>
+            </div>
+            <div class="field-cell">
+              <span class="f-lbl">MRN</span>
+              <span class="f-val" id="chart-mrn">—</span>
+            </div>
+            <div class="field-cell">
+              <span class="f-lbl">Encounter Date</span>
+              <span class="f-val" id="chart-date">—</span>
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field-cell wide">
+              <span class="f-lbl">Mechanism of Injury</span>
+              <span class="f-val" id="hdr-mech">—</span>
+            </div>
+            <div class="field-cell wide">
+              <span class="f-lbl">Primary Diagnosis</span>
+              <span class="f-val" id="hdr-dx">—</span>
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field-cell">
+              <span class="f-lbl">Trauma Level</span>
+              <span class="f-val" id="chart-level">—</span>
+            </div>
+            <div class="field-cell">
+              <span class="f-lbl">Patient Status</span>
+              <span class="f-val" id="chart-status">—</span>
+            </div>
+            <div class="field-cell">
+              <span class="f-lbl">Encounter ID</span>
+              <span class="f-val muted" id="chart-encid">—</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hospital Notification -->
+      <div class="sec-box" id="notif-card">
+        <div class="sec-hd">Hospital Notification Summary</div>
+        <div class="sec-body">
+          <div class="notif-bar" id="notif-txt">—</div>
+        </div>
+      </div>
+
+      <!-- Vitals -->
+      <div class="sec-box" id="sec-vitals">
+        <div class="sec-hd">
+          Vitals Timeline
+          <span class="sec-hd-right">Flowsheet view</span>
+        </div>
+        <div id="vitals-now"><!-- populated by JS --></div>
+        <div style="padding: 10px 12px 0;">
+          <div id="chart-wrap"><canvas id="vitals-chart"></canvas></div>
+        </div>
+        <div class="chart-legend">
+          <span><span class="legend-dot" style="background:#b91c1c"></span>HR (bpm)</span>
+          <span><span class="legend-dot" style="background:#1e40af"></span>SBP (mmHg)</span>
+          <span><span class="legend-dot" style="background:#15803d"></span>SpO₂ (%)</span>
+        </div>
+      </div>
+
+      <!-- Procedures -->
+      <div class="sec-box" id="sec-procedures">
+        <div class="sec-hd">Procedures</div>
+        <div class="sec-body-bare">
+          <table class="clin-table">
+            <thead>
+              <tr><th style="width:70px">Time</th><th>Description</th></tr>
+            </thead>
+            <tbody id="proc-list"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Medications -->
+      <div class="sec-box" id="sec-medications">
+        <div class="sec-hd">Medications Administered</div>
+        <div class="sec-body-bare">
+          <table class="clin-table">
+            <thead>
+              <tr><th style="width:70px">Time</th><th>Description</th></tr>
+            </thead>
+            <tbody id="med-list"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Resuscitation Events — hidden until populated -->
+      <div class="sec-box hidden" id="resus-card" style="border-color:#fca5a5">
+        <div class="sec-hd sec-hd-resus">⚠ Resuscitation Events</div>
+        <div class="sec-body-bare">
+          <table class="clin-table" id="sec-resus">
+            <thead>
+              <tr><th style="width:70px">Time</th><th>Event</th></tr>
+            </thead>
+            <tbody id="resus-list"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Assessment / Clinical Note -->
+      <div class="sec-box" id="sec-assessment">
+        <div class="sec-hd">Physician / EMS Assessment Note</div>
+        <div class="sec-body">
+          <textarea class="note-area" id="note-txt" readonly>—</textarea>
+        </div>
+      </div>
+
+      <!-- Coding -->
+      <div class="sec-box" id="sec-coding">
+        <div class="sec-hd">Diagnostic Coding</div>
+        <div class="sec-body">
+          <div style="display:flex;gap:24px;align-items:flex-start">
+            <div style="flex:1">
+              <div class="f-lbl" style="margin-bottom:7px">ICD-10 Codes</div>
+              <div class="icd-wrap" id="icd-list"></div>
+            </div>
+            <div style="text-align:center;min-width:80px">
+              <div class="f-lbl">AIS Score</div>
+              <div class="ais-display" id="ais-val">—</div>
+              <div class="ais-sub">Abbreviated Injury Scale</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Transcript -->
+      <div class="sec-box" id="sec-transcript">
+        <div class="sec-hd">
+          Raw EMS Transcript
+          <button class="tog-btn" id="tog-btn" onclick="toggleTranscript()">▶ Show</button>
+        </div>
+        <div class="collapse-body" id="transcript-body">
+          <div class="txscript" id="transcript-txt"></div>
+        </div>
+      </div>
+
+      <!-- Encounter Activity Log -->
+      <div class="sec-box" id="sec-activity">
+        <div class="sec-hd">
+          Encounter Activity Log
+          <span class="sec-hd-right" id="feed-clock"></span>
+        </div>
+        <div class="sec-body-bare">
+          <table class="clin-table">
+            <thead>
+              <tr><th style="width:80px">Time</th><th>Event</th></tr>
+            </thead>
+            <tbody id="feed">
+              <tr><td colspan="2" style="color:#9ca3af;font-style:italic;padding:10px">No activity recorded yet.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Images -->
+      <div class="sec-box" id="sec-images">
+        <div class="sec-hd">Scene / Clinical Images</div>
+        <div class="sec-body">
+          <div id="img-grid">
+            <div class="no-images">No images on file</div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /clinical -->
+  </div><!-- /content -->
+</div><!-- /body-wrap -->
+
+<script>
+// ── STATE ─────────────────────────────────────────────────────────
+const socket = io();
+let currentId = null;
+let chart     = null;
+let txOpen    = false;
+
+// ── SIDEBAR NAV ───────────────────────────────────────────────────
+function navClick(el) {
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  el.classList.add('active');
+}
+
+// ── AUDIO ─────────────────────────────────────────────────────────
+function chime(critical = false) {
+  try {
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    const seq = critical ? [880, 660, 523, 392] : [523, 659, 784];
+    let t = ctx.currentTime;
+    seq.forEach(f => {
+      const osc  = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.connect(gain); gain.connect(ctx.destination);
+      osc.type = critical ? 'square' : 'sine';
+      osc.frequency.value = f;
+      gain.gain.setValueAtTime(critical ? 0.12 : 0.18, t);
+      gain.gain.exponentialRampToValueAtTime(0.001, t + 0.5);
+      osc.start(t); osc.stop(t + 0.5);
+      t += 0.3;
+    });
+  } catch(e) { console.warn('Audio unavailable:', e); }
+}
+
+// ── CHART ─────────────────────────────────────────────────────────
+function initChart(vitals) {
+  if (chart) { chart.destroy(); chart = null; }
+  const ctx = document.getElementById('vitals-chart').getContext('2d');
+  chart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: vitals.map(v => v.time),
+      datasets: [
+        {
+          label: 'HR', yAxisID: 'y',
+          data: vitals.map(v => v.hr),
+          borderColor: '#b91c1c', backgroundColor: 'transparent',
+          tension: .2, borderWidth: 1.5, pointRadius: 3,
+          pointBackgroundColor: '#b91c1c', pointStyle: 'triangle',
+        },
+        {
+          label: 'SBP', yAxisID: 'y',
+          data: vitals.map(v => v.sbp),
+          borderColor: '#1e40af', backgroundColor: 'transparent',
+          tension: .2, borderWidth: 1.5, pointRadius: 3,
+          pointBackgroundColor: '#1e40af',
+        },
+        {
+          label: 'SpO₂', yAxisID: 'y2',
+          data: vitals.map(v => v.spo2),
+          borderColor: '#15803d', backgroundColor: 'transparent',
+          tension: .2, borderWidth: 1.5, pointRadius: 3,
+          pointBackgroundColor: '#15803d', pointStyle: 'rect',
+        },
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#fff', borderColor: '#c8cdd3', borderWidth: 1,
+          titleColor: '#4a5568', bodyColor: '#1a1a1a',
+          bodyFont: { family: 'Courier New', size: 11 },
+          padding: 8,
+        }
+      },
+      scales: {
+        x: {
+          grid: { color: '#e5e7eb' },
+          ticks: { color: '#6b7280', font: { family: 'Arial', size: 10 } },
+          border: { color: '#c8cdd3' },
+        },
+        y: {
+          type: 'linear', position: 'left', min: 0, max: 220,
+          grid: { color: '#e5e7eb' },
+          ticks: { color: '#6b7280', font: { family: 'Arial', size: 10 } },
+          border: { color: '#c8cdd3' },
+          title: { display: true, text: 'HR / SBP', color: '#9ca3af', font: { size: 10 } }
+        },
+        y2: {
+          type: 'linear', position: 'right', min: 60, max: 100,
+          grid: { drawOnChartArea: false },
+          ticks: { color: '#15803d', font: { family: 'Arial', size: 10 } },
+          border: { color: '#c8cdd3' },
+          title: { display: true, text: 'SpO₂ %', color: '#15803d', font: { size: 10 } }
+        }
+      }
+    }
+  });
+}
+
+function appendChart(vitals) {
+  if (!chart) return;
+  vitals.forEach(v => {
+    chart.data.labels.push(v.time);
+    chart.data.datasets[0].data.push(v.hr);
+    chart.data.datasets[1].data.push(v.sbp);
+    chart.data.datasets[2].data.push(v.spo2);
+  });
+  chart.update('active');
+}
+
+// ── VITALS INLINE ─────────────────────────────────────────────────
+function setVitalsNow(vitals) {
+  const l = vitals[vitals.length - 1];
+  if (!l) return;
+  document.getElementById('vitals-now').innerHTML = `
+    <div class="vf-cell">
+      <span class="vf-lbl">Heart Rate</span>
+      <span class="vf-val c-hr">${l.hr} <span class="vf-unit">bpm</span></span>
+    </div>
+    <div class="vf-cell">
+      <span class="vf-lbl">Blood Pressure</span>
+      <span class="vf-val c-sbp">${l.sbp}/${l.dbp} <span class="vf-unit">mmHg</span></span>
+    </div>
+    <div class="vf-cell">
+      <span class="vf-lbl">SpO₂</span>
+      <span class="vf-val c-spo2">${l.spo2}<span class="vf-unit">%</span></span>
+    </div>
+    <div class="vf-cell">
+      <span class="vf-lbl">Resp Rate</span>
+      <span class="vf-val c-rr">${l.rr} <span class="vf-unit">br/min</span></span>
+    </div>
+  `;
+}
+
+// ── TIMELINE → TABLE ROWS ─────────────────────────────────────────
+function addTLItems(items, listId, isResus = false) {
+  const tbody = document.getElementById(listId);
+  items.forEach(item => {
+    const tr = document.createElement('tr');
+    if (isResus) tr.className = 'td-crit';
+    tr.innerHTML = `<td class="td-time">${item.time}</td><td>${item.description}</td>`;
+    tbody.appendChild(tr);
+  });
+}
+
+// ── STATUS / BANNER ───────────────────────────────────────────────
+function setStatus(status, eventType, level) {
+  const hdrStatus   = document.getElementById('hdr-status');
+  const chartStatus = document.getElementById('chart-status');
+  const banner      = document.getElementById('banner');
+
+  const map = {
+    'stable':      { cls: 'st-stable',      txt: 'Stable' },
+    'borderline':  { cls: 'st-borderline',  txt: 'Borderline' },
+    'peri-arrest': { cls: 'st-peri-arrest', txt: 'Peri-Arrest' },
+    'post-rosc':   { cls: 'st-post-rosc',   txt: 'Post-ROSC' },
+  };
+  const s = map[status] || { cls: 'st-borderline', txt: status };
+
+  hdrStatus.className   = s.cls;
+  hdrStatus.id          = 'hdr-status';
+  hdrStatus.textContent = s.txt;
+  hdrStatus.classList.remove('hidden');
+
+  if (chartStatus) {
+    chartStatus.textContent = s.txt;
+    chartStatus.style.color = s.cls.includes('arrest') || s.cls.includes('rosc')
+      ? 'var(--red)' : s.cls.includes('borderline') ? '#b45309' : '#15803d';
+  }
+
+  banner.className = '';
+  const ts = new Date().toLocaleTimeString('en-US', { hour12: false });
+  if (eventType === 'update') {
+    banner.className = 'bn-critical';
+    banner.textContent = `🔴 Critical Update — Patient Decompensated | ${ts}`;
+  } else {
+    banner.className = 'bn-inbound';
+    banner.textContent = `⚠ Trauma Inbound — Level ${level} | ETA ~8 min`;
+  }
+}
+
+// ── HEADER ────────────────────────────────────────────────────────
+function setHeader(p) {
+  const pt = p.patient || {};
+  const patientStr = [pt.sex, pt.estimated_age].filter(Boolean).join(', ') || '—';
+  const dateStr    = p.timestamp
+    ? new Date(p.timestamp).toLocaleDateString('en-US', { year:'numeric', month:'short', day:'numeric' })
+    : '—';
+
+  // Top bar
+  document.getElementById('hdr-patient').textContent = 'Trauma Patient';
+  document.getElementById('hdr-mrn').textContent     = pt.mrn || '—';
+  document.getElementById('hdr-agesex').textContent  = patientStr;
+  document.getElementById('hdr-date').textContent    = dateStr;
+  document.getElementById('hdr-mech').textContent    = p.mechanism || '—';
+  document.getElementById('hdr-dx').textContent      = p.primary_diagnosis || '—';
+
+  const lvlEl = document.getElementById('hdr-level');
+  lvlEl.textContent = `Level ${p.trauma_level}`;
+  lvlEl.className   = `level-${p.trauma_level}`;
+  lvlEl.id          = 'hdr-level';
+
+  // Chart fields
+  document.getElementById('chart-patient').textContent = patientStr;
+  document.getElementById('chart-mrn').textContent     = pt.mrn || '—';
+  document.getElementById('chart-date').textContent    = dateStr;
+  document.getElementById('chart-level').textContent   = `Trauma Level ${p.trauma_level}`;
+  document.getElementById('chart-encid').textContent   = p.encounter_id || '—';
+  document.getElementById('encounter-id-display').textContent = `Encounter: ${p.encounter_id || '—'}`;
+}
+
+// ── ACTIVITY LOG ──────────────────────────────────────────────────
+function feedAdd(txt, type = 'info') {
+  const tbody = document.getElementById('feed');
+
+  // Remove placeholder row
+  const ph = tbody.querySelector('td[colspan]');
+  if (ph) ph.closest('tr').remove();
+
+  const ts = new Date().toLocaleTimeString('en-US', { hour12: false });
+  document.getElementById('feed-clock').textContent = `Last update: ${ts}`;
+
+  const tr = document.createElement('tr');
+  if (type === 'crit') tr.className = 'act-crit';
+  else if (type === 'warn') tr.className = 'act-warn';
+  tr.innerHTML = `<td class="act-ts">${ts}</td><td class="act-evt">${txt}</td>`;
+  tbody.insertBefore(tr, tbody.firstChild);
+}
+
+// ── IMAGES ────────────────────────────────────────────────────────
+function addImages(images) {
+  if (!images?.length) return;
+  const grid = document.getElementById('img-grid');
+  // Remove placeholder
+  const ph = grid.querySelector('.no-images');
+  if (ph) ph.remove();
+
+  images.forEach((src, i) => {
+    const wrap = document.createElement('div');
+    wrap.className = 'img-thumb-wrap';
+    const img = document.createElement('img');
+    img.className = 'enc-img';
+    img.src = src;
+    img.alt = `Image ${i + 1}`;
+    const lnk = document.createElement('span');
+    lnk.className = 'img-view-lnk';
+    lnk.textContent = 'View';
+    lnk.onclick = () => window.open(src, '_blank');
+    wrap.appendChild(img);
+    wrap.appendChild(lnk);
+    grid.appendChild(wrap);
+  });
+  document.getElementById('img-grid').parentElement.parentElement
+    .querySelector('.sec-hd').textContent = `Scene / Clinical Images (${images.length})`;
+}
+
+// ── RENDER INITIAL ────────────────────────────────────────────────
+function renderInitial(p, receivedAt) {
+  currentId = p.encounter_id;
+
+  document.getElementById('await-overlay').classList.add('hidden');
+  document.getElementById('clinical').classList.remove('hidden');
+
+  setHeader(p);
+  setStatus(p.status, p.event_type, p.trauma_level);
+
+  if (p.hospital_notification_summary)
+    document.getElementById('notif-txt').textContent = p.hospital_notification_summary;
+
+  if (p.vitals_timeline?.length) {
+    initChart(p.vitals_timeline);
+    setVitalsNow(p.vitals_timeline);
+  }
+
+  if (p.procedures?.length)            addTLItems(p.procedures, 'proc-list');
+  if (p.medications?.length)           addTLItems(p.medications, 'med-list');
+  if (p.resuscitation_events?.length) {
+    document.getElementById('resus-card').classList.remove('hidden');
+    addTLItems(p.resuscitation_events, 'resus-list', true);
+  }
+
+  if (p.clinical_note)       document.getElementById('note-txt').value = p.clinical_note;
+  if (p.icd10_codes?.length)
+    document.getElementById('icd-list').innerHTML =
+      p.icd10_codes.map(c => `<span class="icd-chip">${c}</span>`).join('');
+  if (p.ais_score !== undefined) document.getElementById('ais-val').textContent = p.ais_score;
+  if (p.transcript)          document.getElementById('transcript-txt').textContent = p.transcript;
+
+  addImages(p.images);
+
+  const ts = new Date(receivedAt).toLocaleTimeString('en-US', { hour12: false });
+  feedAdd(`Encounter received — ${ts}`, 'info');
+  feedAdd('Initial trauma notification dispatched', 'warn');
+  feedAdd(`Vitals stream active — ${p.vitals_timeline?.length || 0} data point(s)`, 'info');
+
+  chime(false);
+}
+
+// ── RENDER UPDATE ─────────────────────────────────────────────────
+function renderUpdate(p, receivedAt) {
+  setHeader(p);
+  setStatus(p.status, p.event_type, p.trauma_level);
+
+  if (p.hospital_notification_summary)
+    document.getElementById('notif-txt').textContent = p.hospital_notification_summary;
+
+  if (p.vitals_timeline?.length) {
+    appendChart(p.vitals_timeline);
+    setVitalsNow(p.vitals_timeline);
+  }
+
+  if (p.procedures?.length)            addTLItems(p.procedures, 'proc-list');
+  if (p.medications?.length)           addTLItems(p.medications, 'med-list');
+  if (p.resuscitation_events?.length) {
+    document.getElementById('resus-card').classList.remove('hidden');
+    addTLItems(p.resuscitation_events, 'resus-list', true);
+  }
+
+  if (p.clinical_note)       document.getElementById('note-txt').value = p.clinical_note;
+  if (p.icd10_codes?.length)
+    document.getElementById('icd-list').innerHTML =
+      p.icd10_codes.map(c => `<span class="icd-chip">${c}</span>`).join('');
+  if (p.ais_score !== undefined) document.getElementById('ais-val').textContent = p.ais_score;
+  if (p.transcript)          document.getElementById('transcript-txt').textContent = p.transcript;
+
+  addImages(p.images);
+
+  const ts = new Date(receivedAt).toLocaleTimeString('en-US', { hour12: false });
+  feedAdd(`⚠ Critical update received — ${ts}`, 'crit');
+  feedAdd('Upgrade call placed — thoracotomy team activated', 'crit');
+  feedAdd(`Vitals chart updated — ${p.vitals_timeline?.length || 0} new point(s) appended`, 'info');
+
+  chime(true);
+}
+
+// ── TRANSCRIPT TOGGLE ──────────────────────────────────────────────
+function toggleTranscript() {
+  txOpen = !txOpen;
+  document.getElementById('transcript-body').classList.toggle('open', txOpen);
+  document.getElementById('tog-btn').textContent = txOpen ? '▼ Hide' : '▶ Show';
+}
+
+// ── SOCKET ────────────────────────────────────────────────────────
+socket.on('encounter_event', ({ payload: p, receivedAt }) => {
+  console.log('[EMR]', p.encounter_id, p.event_type, receivedAt);
+  if (!currentId || p.encounter_id !== currentId) {
+    renderInitial(p, receivedAt);
+  } else if (p.event_type === 'update') {
+    renderUpdate(p, receivedAt);
+  } else {
+    renderInitial(p, receivedAt);
+  }
+});
+
+socket.on('connect',    () => console.log('[EMR] Connected'));
+socket.on('disconnect', () => console.log('[EMR] Disconnected'));
+</script>
+</body>
+</html>
