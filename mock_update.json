@@ -1,0 +1,43 @@
+{
+  "encounter_id": "TRX-20480418-001",
+  "timestamp": "2048-04-18T14:40:00Z",
+  "event_type": "update",
+  "patient": {
+    "estimated_age": "30s",
+    "sex": "Male",
+    "mrn": "TRX-20480418"
+  },
+  "mechanism": "GSW left anterior chest, 4th ICS mid-clavicular — suspected cardiac trajectory",
+  "primary_diagnosis": "Cardiac tamponade / traumatic arrest — post-ROSC",
+  "trauma_level": 1,
+  "vitals_timeline": [
+    { "time": "T+6:00", "hr": 150, "sbp": 68, "dbp": 0,  "spo2": 88, "rr": 0 },
+    { "time": "T+7:30", "hr": 0,   "sbp": 0,  "dbp": 0,  "spo2": 72, "rr": 0 },
+    { "time": "T+9:00", "hr": 150, "sbp": 68, "dbp": 38, "spo2": 80, "rr": 6 }
+  ],
+  "procedures": [
+    { "time": "T+7:30", "description": "CPR initiated — high-quality compressions, rate 100/min" },
+    { "time": "T+7:35", "description": "Airway secured — video laryngoscopy, 7.5 ETT, 22cm at lip, ETCO2 confirmed" },
+    { "time": "T+9:00", "description": "ROSC achieved — pulse restored, post-arrest protocol initiated" },
+    { "time": "T+9:10", "description": "THORACOTOMY TRAY REQUESTED — prepare for emergency thoracotomy on arrival" }
+  ],
+  "medications": [
+    { "time": "T+7:35", "description": "Epinephrine 1mg IV push — first dose" },
+    { "time": "T+8:15", "description": "Epinephrine 1mg IV push — second dose" },
+    { "time": "T+9:00", "description": "Whole blood x1 unit additional — MTP activated, 4u pRBC / 4u FFP / 1u platelets requested" }
+  ],
+  "clinical_note": "TRAUMA NOTE — Critical Update: Resuscitation / Decompensation\n\nADDENDUM T+7:30:\nPatient acutely decompensated en route. Loss of palpable pulse confirmed at T+7:30. Rhythm: pulseless electrical activity (PEA). CPR initiated immediately — high-quality compressions maintained throughout.\n\nAirway secured via video laryngoscopy — 7.5 ETT placed at 22cm, bilateral breath sounds confirmed, waveform capnography present and consistent with adequate compressions.\n\nEpinephrine 1mg IV administered x2 (T+7:35 and T+8:15).\n\nROSC achieved at approximately T+9:00. Post-ROSC vitals: HR 150, BP 68/palp, SpO2 trending up from 72% to 80%.\n\nCLINICAL IMPRESSION:\nHigh suspicion for cardiac tamponade given GSW trajectory through pericardium. Tension pneumothorax recurrence cannot be excluded. Needle decompression not yet performed — chest tube in situ.\n\nURGENT PLAN:\n- Emergency thoracotomy likely indicated immediately on arrival\n- Thoracotomy tray must be present in trauma bay\n- Cardiac surgery to be physically present\n- MTP activated: 4u pRBC, 4u FFP, 1u platelets ready\n- Anticipate surgical intervention within 5 minutes of arrival\n- Echo on arrival if patient momentarily stable",
+  "icd10_codes": ["S27.2XXA", "S21.101A", "J93.11", "R57.8", "I46.9", "S26.09XA"],
+  "ais_score": 5,
+  "hospital_notification_summary": "⚠ CRITICAL UPGRADE — SAME ENCOUNTER. Patient decompensated en route — pulseless at T+7:30, CPR initiated, ROSC at T+9:00. Suspected cardiac tamponade. Post-ROSC: HR 150, BP 68/palp, SpO2 80%. Intubated. THORACOTOMY TRAY REQUIRED IN BAY NOW. MTP activated. Cardiac surgery must be physically present. ETA 3 minutes.",
+  "transcript": "EMS Unit 7 URGENT UPDATE: Patient has crashed. We lost pulses at T plus 7 and a half minutes. CPR ongoing, good quality. We intubated him — video laryngoscopy, 7.5 tube confirmed with capnography. We gave epi twice. We have ROSC — got pulses back approximately one minute ago. Post-ROSC: heart rate is 150, BP is 68 palp, sats coming up from 72, sitting at 80 now. We think this is tamponade — the GSW trajectory looks like it went through the pericardium. We are requesting thoracotomy tray to be ready the moment we hit your bay. MTP needs to be activated right now. We need your cardiac surgeon in that room. ETA is 3 minutes. Do not let that room fill up.",
+  "images": [],
+  "status": "post-rosc",
+  "resuscitation_events": [
+    { "time": "T+7:30", "description": "Loss of pulse — pulseless electrical activity (PEA) confirmed" },
+    { "time": "T+7:30", "description": "CPR initiated — high-quality compressions, rate 100/min" },
+    { "time": "T+7:35", "description": "Epinephrine 1mg IV push — first dose" },
+    { "time": "T+8:15", "description": "Epinephrine 1mg IV push — second dose" },
+    { "time": "T+9:00", "description": "ROSC achieved — pulse restored at T+9:00" }
+  ]
+}
