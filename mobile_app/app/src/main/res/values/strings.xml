@@ -25,4 +25,35 @@
     <string name="dialog_token_title">Download Gemma 4 E4B</string>
     <string name="dialog_token_message">Paste a Hugging Face token with access to `litert-community/gemma-4-E4B-it-litert-lm`. Make sure you have accepted the Gemma license on Hugging Face first.</string>
     <string name="dialog_token_hint">Hugging Face access token</string>
+
+    <!-- Wearables module -->
+    <string name="wearables_title">Wearables</string>
+    <string name="wearables_back">Back</string>
+    <string name="wearables_refresh">Refresh</string>
+    <string name="wearables_action_open">Wearables</string>
+
+    <string name="wearables_sources_header">Sources</string>
+    <string name="wearables_vitals_header">Live vitals</string>
+
+    <string name="wearables_permission_card_title">Grant Health Connect permissions</string>
+    <string name="wearables_permission_card_body">We read heart rate, HRV, SpO2, blood pressure, temperature and respiratory rate from Health Connect. Samsung Health and the Oura app write data to Health Connect locally — no cell service required.</string>
+    <string name="wearables_permission_card_cta">Grant</string>
+
+    <string name="wearables_vital_hr">Heart rate</string>
+    <string name="wearables_vital_hrv">Heart rate variability (RMSSD)</string>
+    <string name="wearables_vital_spo2">Blood oxygen (SpO₂)</string>
+    <string name="wearables_vital_bp">Blood pressure</string>
+    <string name="wearables_vital_body_temp">Body temperature</string>
+    <string name="wearables_vital_skin_temp">Skin temperature</string>
+    <string name="wearables_vital_resp_rate">Respiratory rate</string>
+
+    <string name="wearables_streaming_start">Start streaming</string>
+    <string name="wearables_streaming_stop">Stop streaming</string>
+    <string name="wearables_streaming_state_active">Streaming active. The foreground service will keep ingesting vitals in the background.</string>
+    <string name="wearables_streaming_state_idle">Streaming off. Start to begin ingesting samples from the enabled sources.</string>
+
+    <string name="wearables_streaming_notification_title">Streaming vitals</string>
+    <string name="wearables_streaming_notification_stop_action">Stop</string>
+    <string name="wearables_streaming_notification_channel">Wearable streaming</string>
+    <string name="wearables_streaming_notification_channel_desc">Ongoing notification while the app is streaming vitals from Health Connect or paired wearables.</string>
 </resources>
