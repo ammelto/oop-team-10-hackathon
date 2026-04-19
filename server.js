@@ -16,6 +16,9 @@
  *
  * Health check:
  *   curl http://localhost:3000/health
+ *
+ * Reset demo (clears all encounters, resets frontend to State 0):
+ *   curl http://localhost:3000/demo-reset
  */
 
 const express = require('express');
@@ -39,6 +42,13 @@ const encounters = {};
 
 app.get('/health', (req, res) => {
   res.json({ status: 'ok' });
+});
+
+app.get('/demo-reset', (req, res) => {
+  Object.keys(encounters).forEach(k => delete encounters[k]);
+  console.log(`[${new Date().toISOString()}] Demo reset — all encounters cleared`);
+  io.emit('demo_reset');
+  res.json({ success: true, message: 'Demo reset complete' });
 });
 
 app.post('/encounter', (req, res) => {
