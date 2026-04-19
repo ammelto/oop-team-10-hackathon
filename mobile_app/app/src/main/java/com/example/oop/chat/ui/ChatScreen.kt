@@ -38,12 +38,16 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
 
 @Composable
-fun ChatScreen(viewModel: ChatViewModel) {
+fun ChatScreen(
+    viewModel: ChatViewModel,
+    onOpenWearables: (() -> Unit)? = null,
+) {
     val state by viewModel.state.collectAsStateWithLifecycle()
     ChatScreen(
         state = state,
         onIntent = viewModel::onIntent,
         effects = viewModel.effects,
+        onOpenWearables = onOpenWearables,
     )
 }
 
@@ -52,6 +56,7 @@ fun ChatScreen(
     state: ChatUiState,
     onIntent: (ChatIntent) -> Unit,
     effects: Flow<ChatEffect>,
+    onOpenWearables: (() -> Unit)? = null,
 ) {
     val context = LocalContext.current
     val listState = rememberLazyListState()
@@ -136,6 +141,7 @@ fun ChatScreen(
                 onEnterToken = { onIntent(ChatIntent.StartDownload) },
                 onCancelDownload = { onIntent(ChatIntent.CancelDownload) },
                 onDismissError = { onIntent(ChatIntent.DismissError) },
+                onOpenWearables = onOpenWearables,
             )
         },
         snackbarHost = { SnackbarHost(hostState = snackbarHostState) },

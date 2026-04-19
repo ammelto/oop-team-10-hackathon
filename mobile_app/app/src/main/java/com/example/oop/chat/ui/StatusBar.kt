@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Key
+import androidx.compose.material.icons.filled.MonitorHeart
 import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -27,6 +28,7 @@ fun StatusBar(
     onEnterToken: () -> Unit,
     onCancelDownload: () -> Unit,
     onDismissError: () -> Unit,
+    onOpenWearables: (() -> Unit)? = null,
     modifier: Modifier = Modifier,
 ) {
     CenterAlignedTopAppBar(
@@ -39,6 +41,14 @@ fun StatusBar(
             )
         },
         actions = {
+            if (onOpenWearables != null) {
+                IconButton(onClick = onOpenWearables) {
+                    Icon(
+                        imageVector = Icons.Default.MonitorHeart,
+                        contentDescription = stringResource(R.string.wearables_action_open),
+                    )
+                }
+            }
             when (status) {
                 is Status.Ready -> {
                     IconButton(onClick = onReset) {
